@@ -16,11 +16,34 @@ public class EventEntity: NSManagedObject, Identifiable {
         return NSFetchRequest<EventEntity>(entityName: "EventEntity")
     }
 
-    @NSManaged public var id: UUID?
-    @NSManaged public var name: String?
-    @NSManaged public var emoji: String?
-    @NSManaged public var date: Date?
-    @NSManaged public var repeatEnum: Int16
+    @NSManaged public var id: UUID
+    @NSManaged public var name: String
+    @NSManaged public var emoji: String
+    @NSManaged public var date: Date
+    @NSManaged private var repeatEnum: Int16
     @NSManaged public var tag: TagEntity?
+    
+    public var repeatType: Repeat {
+        get {
+            return Repeat(rawValue: Int(repeatEnum)) ?? .none
+        }
+        set {
+            repeatEnum = Int16(newValue.rawValue)
+        }
+    }
+    
+    public var daysRemaining: Int {
+        let calendar = Calendar.current
+        let start = calendar.startOfDay(for: .now)
+        let end = calendar.startOfDay(for: date)
+        
+        let components = calendar.dateComponents([.day], from: start, to: end)
+        
+        if let days = components.day {
+            return days
+        } else {
+            return 0
+        }
+    }
 
 }

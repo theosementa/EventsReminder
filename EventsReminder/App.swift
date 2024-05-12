@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Observation
 
 @main
 struct EventsReminderApp: App {
@@ -13,7 +14,7 @@ struct EventsReminderApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
                 .environment(\.managedObjectContext, coreDataStack.viewContext)
         }
     }

@@ -55,7 +55,7 @@ class CoreDataStack {
        
        // Insérez des données factices pour les prévisualisations
        for _ in 0..<10 {
-           let newItem = YourManagedObject(context: viewContext)
+           let newItem = EventEntity(context: viewContext)
            newItem.name = "Sample"
            // Configurez d'autres propriétés selon vos besoins
        }
