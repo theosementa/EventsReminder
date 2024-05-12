@@ -14,10 +14,10 @@ struct EventCell: View {
     
     // MARK: -
     var body: some View {
-        HStack {
+        HStack(spacing: 12) {
             Text(event.emoji)
                 .font(.system(size: 24, weight: .bold))
-                .frame(width: 32, height: 32)
+                .frame(width: 28, height: 28)
                 .backgroundComponent(isInSheet: true)
             
             VStack(alignment: .leading, spacing: 2) {
@@ -34,7 +34,8 @@ struct EventCell: View {
             Text(event.daysRemaining.formatted())
                 .foregroundStyle(event.tag?.color ?? Color(uiColor: .label))
                 .font(.system(size: 24, weight: .bold))
-                .frame(width: 32, height: 32)
+                .frame(minWidth: 28)
+                .frame(height: 28)
                 .backgroundComponent(
                     containerColor: event.tag?.color.opacity(0.3) ?? nil,
                     strokeColor: event.tag?.color ?? nil

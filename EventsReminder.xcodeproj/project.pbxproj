@@ -28,6 +28,13 @@
 		D9959AC62BF11A5B00232F77 /* Optionnal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AC52BF11A5B00232F77 /* Optionnal.swift */; };
 		D9959AC92BF11CF200232F77 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AC82BF11CF200232F77 /* HomeViewModel.swift */; };
 		D9959ACB2BF11D3C00232F77 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959ACA2BF11D3C00232F77 /* String.swift */; };
+		D9959ACD2BF11F0B00232F77 /* CreateNewEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959ACC2BF11F0B00232F77 /* CreateNewEventView.swift */; };
+		D9959AD12BF1276900232F77 /* InteractiveDismissableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959ACE2BF1276900232F77 /* InteractiveDismissableView.swift */; };
+		D9959AD22BF1276900232F77 /* Swipe Back.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959ACF2BF1276900232F77 /* Swipe Back.swift */; };
+		D9959AD42BF1278D00232F77 /* CreateNewEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AD32BF1278D00232F77 /* CreateNewEventViewModel.swift */; };
+		D9959AD62BF129D800232F77 /* EmojiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AD52BF129D800232F77 /* EmojiTextField.swift */; };
+		D9959AD82BF129ED00232F77 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AD72BF129ED00232F77 /* Character.swift */; };
+		D9959ADA2BF12AAC00232F77 /* MeasureSizeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AD92BF12AAC00232F77 /* MeasureSizeModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +62,13 @@
 		D9959AC52BF11A5B00232F77 /* Optionnal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optionnal.swift; sourceTree = "<group>"; };
 		D9959AC82BF11CF200232F77 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D9959ACA2BF11D3C00232F77 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		D9959ACC2BF11F0B00232F77 /* CreateNewEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewEventView.swift; sourceTree = "<group>"; };
+		D9959ACE2BF1276900232F77 /* InteractiveDismissableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveDismissableView.swift; sourceTree = "<group>"; };
+		D9959ACF2BF1276900232F77 /* Swipe Back.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Swipe Back.swift"; sourceTree = "<group>"; };
+		D9959AD32BF1278D00232F77 /* CreateNewEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewEventViewModel.swift; sourceTree = "<group>"; };
+		D9959AD52BF129D800232F77 /* EmojiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiTextField.swift; sourceTree = "<group>"; };
+		D9959AD72BF129ED00232F77 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		D9959AD92BF12AAC00232F77 /* MeasureSizeModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasureSizeModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				D9959AA92BF10AE900232F77 /* HomeView.swift */,
+				D9959ACC2BF11F0B00232F77 /* CreateNewEventView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -134,6 +149,7 @@
 			children = (
 				D9959AB02BF1102B00232F77 /* Assets */,
 				D9959AC22BF1148A00232F77 /* Extension */,
+				D9959AD02BF1276900232F77 /* Helper */,
 				D9959ABF2BF1125200232F77 /* Modifiers */,
 				D9959AB52BF1103500232F77 /* Navigation */,
 			);
@@ -172,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				D9959ABB2BF110E800232F77 /* EventCell.swift */,
+				D9959AD52BF129D800232F77 /* EmojiTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -180,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				D9959AC02BF1125E00232F77 /* BackgroundComponentViewModifier.swift */,
+				D9959AD92BF12AAC00232F77 /* MeasureSizeModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -187,6 +205,7 @@
 		D9959AC22BF1148A00232F77 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				D9959AD72BF129ED00232F77 /* Character.swift */,
 				D9959AC32BF1149300232F77 /* Date.swift */,
 				D9959AC52BF11A5B00232F77 /* Optionnal.swift */,
 				D9959ACA2BF11D3C00232F77 /* String.swift */,
@@ -198,8 +217,18 @@
 			isa = PBXGroup;
 			children = (
 				D9959AC82BF11CF200232F77 /* HomeViewModel.swift */,
+				D9959AD32BF1278D00232F77 /* CreateNewEventViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D9959AD02BF1276900232F77 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				D9959ACE2BF1276900232F77 /* InteractiveDismissableView.swift */,
+				D9959ACF2BF1276900232F77 /* Swipe Back.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,16 +308,23 @@
 				D9959AAA2BF10AE900232F77 /* HomeView.swift in Sources */,
 				D9959AAE2BF10CDF00232F77 /* RepeatEnum.swift in Sources */,
 				D98AEC752BF103FE005C4AA6 /* EventsReminder.xcdatamodeld in Sources */,
+				D9959AD22BF1276900232F77 /* Swipe Back.swift in Sources */,
 				D9959AB92BF1103500232F77 /* Router.swift in Sources */,
+				D9959AD42BF1278D00232F77 /* CreateNewEventViewModel.swift in Sources */,
 				D9959AC12BF1125E00232F77 /* BackgroundComponentViewModifier.swift in Sources */,
+				D9959AD12BF1276900232F77 /* InteractiveDismissableView.swift in Sources */,
 				D98AEC8E2BF109A1005C4AA6 /* Event.swift in Sources */,
+				D9959ACD2BF11F0B00232F77 /* CreateNewEventView.swift in Sources */,
 				D9959AB62BF1103500232F77 /* NavigationDirection.swift in Sources */,
 				D9959ABC2BF110E800232F77 /* EventCell.swift in Sources */,
+				D9959AD82BF129ED00232F77 /* Character.swift in Sources */,
 				D98AEC902BF109A1005C4AA6 /* Tag.swift in Sources */,
+				D9959ADA2BF12AAC00232F77 /* MeasureSizeModifier.swift in Sources */,
 				D9959ACB2BF11D3C00232F77 /* String.swift in Sources */,
 				D9959AAC2BF10C0F00232F77 /* EventRepository.swift in Sources */,
 				D98AEC692BF103FD005C4AA6 /* App.swift in Sources */,
 				D98AEC882BF10753005C4AA6 /* CoreDataStack.swift in Sources */,
+				D9959AD62BF129D800232F77 /* EmojiTextField.swift in Sources */,
 				D9959AC62BF11A5B00232F77 /* Optionnal.swift in Sources */,
 				D9959AB72BF1103500232F77 /* NavigationManager.swift in Sources */,
 			);

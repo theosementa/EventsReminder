@@ -15,9 +15,9 @@ class NavigationManager: Router {
     }
     
     // sheet
-//    func presentCreateNewEntry(dismissAction: (() -> Void)? = nil) {
-//        presentSheet(.createNewEntry, dismissAction)
-//    }
+    func presentCreateNewEvent(dismissAction: (() -> Void)? = nil) {
+        presentSheet(.createNewEvent, dismissAction)
+    }
     
 
     // Build view
@@ -34,6 +34,8 @@ private extension NavigationManager {
             switch direction {
             case .home:
                 HomeView(router: router(route: route))
+            case .createNewEvent:
+                CreateNewEventView()
             }
         }
     }

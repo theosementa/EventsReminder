@@ -20,7 +20,11 @@ struct HomeView: View {
     var body: some View {
         List(eventRepository.events) { event in
             EventCell(event: event)
+                .listRowSeparator(.hidden)
+                .listRowInsets(.init(top: 6, leading: 16, bottom: 6, trailing: 16))
+                .listRowBackground(Color.background.edgesIgnoringSafeArea(.all))
         }
+        .listStyle(.plain)
         .navigationTitle("Events".localized)
         .searchable(text: $viewModel.searchText, prompt: "Search a event".localized)
         .toolbar {
@@ -28,7 +32,7 @@ struct HomeView: View {
                 Button(action: {}, label: {
                     Image(systemName: "crown.fill")
                 })
-                Button(action: {}, label: {
+                Button(action: { router.presentCreateNewEvent() }, label: {
                     Image(systemName: "plus")
                 })
             }
