@@ -1,5 +1,5 @@
 //
-//  HomeView.swift
+//  EventCell.swift
 //  EventsReminder
 //
 //  Created by KaayZenn on 12/05/2024.
@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct EventCell: View {
     
     // Builder
-    var router: NavigationManager
+    @ObservedObject var event: EventEntity
     
     // MARK: -
     var body: some View {
@@ -20,6 +20,5 @@ struct HomeView: View {
 
 // MARK: - Preview
 #Preview {
-    HomeView(router: .init(isPresented: .constant(nil)))
-        .environment(\.managedObjectContext, CoreDataStack.preview.viewContext)
+    EventCell(event: .preview1)
 }

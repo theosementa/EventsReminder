@@ -47,3 +47,19 @@ public class EventEntity: NSManagedObject, Identifiable {
     }
 
 }
+
+// MARK: - Preview
+extension EventEntity {
+    
+    static var preview1: EventEntity {
+        let preview = EventEntity(context: CoreDataStack.preview.viewContext)
+        preview.id = UUID()
+        preview.name = "Preview 1"
+        preview.emoji = "🎂"
+        preview.date = Calendar.current.date(byAdding: .day, value: 10, to: .now) ?? .now
+        preview.repeatType = .yearly
+        
+        return preview
+    }
+    
+}

@@ -10,12 +10,17 @@ import Observation
 
 @main
 struct EventsReminderApp: App {
+    
     let coreDataStack = CoreDataStack.shared
+    let router = NavigationManager(isPresented: .constant(.home))
 
+    // MARK: -
     var body: some Scene {
         WindowGroup {
-            HomeView()
-                .environment(\.managedObjectContext, coreDataStack.viewContext)
+            NavStack(router: router) {
+                HomeView(router: router)
+            }
+            .environment(\.managedObjectContext, coreDataStack.viewContext)
         }
     }
 }
