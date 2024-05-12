@@ -45,7 +45,28 @@ class CoreDataStack {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+        
     }
     
-    private init() {}
+    #if DEBUG
+   static var preview: CoreDataStack = {
+       let stack = CoreDataStack()
+       let viewContext = stack.persistentContainer.viewContext
+       
+       // Insérez des données factices pour les prévisualisations
+       for _ in 0..<10 {
+           let newItem = YourManagedObject(context: viewContext)
+           newItem.name = "Sample"
+           // Configurez d'autres propriétés selon vos besoins
+       }
+       
+       do {
+           try viewContext.save()
+       } catch {
+           fatalError("Error saving preview context: \(error)")
+       }
+       
+       return stack
+   }()
+   #endif
 }

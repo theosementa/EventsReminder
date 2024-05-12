@@ -13,6 +13,8 @@
 		D98AEC702BF103FE005C4AA6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98AEC6F2BF103FE005C4AA6 /* Preview Assets.xcassets */; };
 		D98AEC752BF103FE005C4AA6 /* EventsReminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D98AEC732BF103FE005C4AA6 /* EventsReminder.xcdatamodeld */; };
 		D98AEC882BF10753005C4AA6 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AEC872BF10753005C4AA6 /* CoreDataStack.swift */; };
+		D98AEC8E2BF109A1005C4AA6 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AEC8A2BF109A1005C4AA6 /* Event.swift */; };
+		D98AEC902BF109A1005C4AA6 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AEC8C2BF109A1005C4AA6 /* Tag.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		D98AEC822BF106D5005C4AA6 /* EventsReminder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EventsReminder.entitlements; sourceTree = "<group>"; };
 		D98AEC832BF106E0005C4AA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D98AEC872BF10753005C4AA6 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		D98AEC8A2BF109A1005C4AA6 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		D98AEC8C2BF109A1005C4AA6 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +83,10 @@
 		D98AEC842BF106ED005C4AA6 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				D98AEC732BF103FE005C4AA6 /* EventsReminder.xcdatamodeld */,
 				D98AEC872BF10753005C4AA6 /* CoreDataStack.swift */,
+				D98AEC732BF103FE005C4AA6 /* EventsReminder.xcdatamodeld */,
+				D98AEC8A2BF109A1005C4AA6 /* Event.swift */,
+				D98AEC8C2BF109A1005C4AA6 /* Tag.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -173,6 +179,8 @@
 			files = (
 				D98AEC6B2BF103FD005C4AA6 /* ContentView.swift in Sources */,
 				D98AEC752BF103FE005C4AA6 /* EventsReminder.xcdatamodeld in Sources */,
+				D98AEC8E2BF109A1005C4AA6 /* Event.swift in Sources */,
+				D98AEC902BF109A1005C4AA6 /* Tag.swift in Sources */,
 				D98AEC692BF103FD005C4AA6 /* App.swift in Sources */,
 				D98AEC882BF10753005C4AA6 /* CoreDataStack.swift in Sources */,
 			);
