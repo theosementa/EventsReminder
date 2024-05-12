@@ -19,6 +19,7 @@ class CoreDataStack {
         }
         
         description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+        description.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: "iCloud.com.sementa.eventsreminder")
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -54,10 +55,13 @@ class CoreDataStack {
        let viewContext = stack.persistentContainer.viewContext
        
        // Insérez des données factices pour les prévisualisations
-       for _ in 0..<10 {
-           let newItem = EventEntity(context: viewContext)
-           newItem.name = "Sample"
-           // Configurez d'autres propriétés selon vos besoins
+       for index in 0..<10 {
+           let preview = EventEntity(context: viewContext)
+           preview.id = UUID()
+           preview.name = "Preview \(index)"
+           preview.emoji = "🎂"
+           preview.date = Calendar.current.date(byAdding: .day, value: 10 * index, to: .now) ?? .now
+           preview.repeatType = .yearly
        }
        
        do {

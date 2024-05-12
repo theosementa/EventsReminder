@@ -22,6 +22,12 @@
 		D9959AB82BF1103500232F77 /* NavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AB32BF1103500232F77 /* NavigationStack.swift */; };
 		D9959AB92BF1103500232F77 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AB42BF1103500232F77 /* Router.swift */; };
 		D9959ABC2BF110E800232F77 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959ABB2BF110E800232F77 /* EventCell.swift */; };
+		D9959ABE2BF1121E00232F77 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9959ABD2BF1121E00232F77 /* Colors.xcassets */; };
+		D9959AC12BF1125E00232F77 /* BackgroundComponentViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AC02BF1125E00232F77 /* BackgroundComponentViewModifier.swift */; };
+		D9959AC42BF1149300232F77 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AC32BF1149300232F77 /* Date.swift */; };
+		D9959AC62BF11A5B00232F77 /* Optionnal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AC52BF11A5B00232F77 /* Optionnal.swift */; };
+		D9959AC92BF11CF200232F77 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AC82BF11CF200232F77 /* HomeViewModel.swift */; };
+		D9959ACB2BF11D3C00232F77 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959ACA2BF11D3C00232F77 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +49,12 @@
 		D9959AB32BF1103500232F77 /* NavigationStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationStack.swift; sourceTree = "<group>"; };
 		D9959AB42BF1103500232F77 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		D9959ABB2BF110E800232F77 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		D9959ABD2BF1121E00232F77 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		D9959AC02BF1125E00232F77 /* BackgroundComponentViewModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundComponentViewModifier.swift; sourceTree = "<group>"; };
+		D9959AC32BF1149300232F77 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		D9959AC52BF11A5B00232F77 /* Optionnal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optionnal.swift; sourceTree = "<group>"; };
+		D9959AC82BF11CF200232F77 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		D9959ACA2BF11D3C00232F77 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +92,7 @@
 				D98AEC682BF103FD005C4AA6 /* App.swift */,
 				D98AEC852BF106F2005C4AA6 /* Views */,
 				D9959ABA2BF110C600232F77 /* Components */,
+				D9959AC72BF11CE600232F77 /* ViewModel */,
 				D9959AAF2BF10CE300232F77 /* Model */,
 				D98AEC842BF106ED005C4AA6 /* CoreData */,
 				D98AEC862BF106F6005C4AA6 /* Ressources */,
@@ -120,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				D9959AB02BF1102B00232F77 /* Assets */,
+				D9959AC22BF1148A00232F77 /* Extension */,
+				D9959ABF2BF1125200232F77 /* Modifiers */,
 				D9959AB52BF1103500232F77 /* Navigation */,
 			);
 			path = Ressources;
@@ -137,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				D98AEC6C2BF103FE005C4AA6 /* Assets.xcassets */,
+				D9959ABD2BF1121E00232F77 /* Colors.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -158,6 +174,32 @@
 				D9959ABB2BF110E800232F77 /* EventCell.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		D9959ABF2BF1125200232F77 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				D9959AC02BF1125E00232F77 /* BackgroundComponentViewModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		D9959AC22BF1148A00232F77 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D9959AC32BF1149300232F77 /* Date.swift */,
+				D9959AC52BF11A5B00232F77 /* Optionnal.swift */,
+				D9959ACA2BF11D3C00232F77 /* String.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D9959AC72BF11CE600232F77 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D9959AC82BF11CF200232F77 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9959ABE2BF1121E00232F77 /* Colors.xcassets in Resources */,
 				D98AEC702BF103FE005C4AA6 /* Preview Assets.xcassets in Resources */,
 				D98AEC6D2BF103FE005C4AA6 /* Assets.xcassets in Resources */,
 			);
@@ -230,18 +273,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9959AC92BF11CF200232F77 /* HomeViewModel.swift in Sources */,
 				D9959AB82BF1103500232F77 /* NavigationStack.swift in Sources */,
+				D9959AC42BF1149300232F77 /* Date.swift in Sources */,
 				D9959AAA2BF10AE900232F77 /* HomeView.swift in Sources */,
 				D9959AAE2BF10CDF00232F77 /* RepeatEnum.swift in Sources */,
 				D98AEC752BF103FE005C4AA6 /* EventsReminder.xcdatamodeld in Sources */,
 				D9959AB92BF1103500232F77 /* Router.swift in Sources */,
+				D9959AC12BF1125E00232F77 /* BackgroundComponentViewModifier.swift in Sources */,
 				D98AEC8E2BF109A1005C4AA6 /* Event.swift in Sources */,
 				D9959AB62BF1103500232F77 /* NavigationDirection.swift in Sources */,
 				D9959ABC2BF110E800232F77 /* EventCell.swift in Sources */,
 				D98AEC902BF109A1005C4AA6 /* Tag.swift in Sources */,
+				D9959ACB2BF11D3C00232F77 /* String.swift in Sources */,
 				D9959AAC2BF10C0F00232F77 /* EventRepository.swift in Sources */,
 				D98AEC692BF103FD005C4AA6 /* App.swift in Sources */,
 				D98AEC882BF10753005C4AA6 /* CoreDataStack.swift in Sources */,
+				D9959AC62BF11A5B00232F77 /* Optionnal.swift in Sources */,
 				D9959AB72BF1103500232F77 /* NavigationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

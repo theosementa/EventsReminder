@@ -14,11 +14,44 @@ struct EventCell: View {
     
     // MARK: -
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text(event.emoji)
+                .font(.system(size: 24, weight: .bold))
+                .frame(width: 32, height: 32)
+                .backgroundComponent(isInSheet: true)
+            
+            VStack(alignment: .leading, spacing: 2) {
+                Text(event.name)
+                    .font(.system(size: 18, weight: .semibold))
+                    .lineLimit(1)
+                Text(event.fullDate)
+                    .font(.system(size: 14, weight: .medium))
+                    .lineLimit(2)
+                    .foregroundStyle(Color(uiColor: .placeholderText))
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            
+            Text(event.daysRemaining.formatted())
+                .foregroundStyle(event.tag?.color ?? Color(uiColor: .label))
+                .font(.system(size: 24, weight: .bold))
+                .frame(width: 32, height: 32)
+                .backgroundComponent(
+                    containerColor: event.tag?.color.opacity(0.3) ?? nil,
+                    strokeColor: event.tag?.color ?? nil
+                )
+        }
+        .backgroundComponent()
     } // End body
 } // End struct
 
 // MARK: - Preview
-#Preview {
+#Preview("Dark mode", traits: .sizeThatFitsLayout) {
     EventCell(event: .preview1)
+        .preferredColorScheme(.dark)
+        .padding()
+}
+
+#Preview("Light mode", traits: .sizeThatFitsLayout) {
+    EventCell(event: .preview1)
+        .padding()
 }

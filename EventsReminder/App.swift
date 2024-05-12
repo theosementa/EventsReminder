@@ -11,8 +11,11 @@ import Observation
 @main
 struct EventsReminderApp: App {
     
-    let coreDataStack = CoreDataStack.shared
-    let router = NavigationManager(isPresented: .constant(.home))
+    private let coreDataStack = CoreDataStack.shared
+    private let router = NavigationManager(isPresented: .constant(.home))
+    
+    // Custom
+    private let eventRepository: EventRepository = EventRepository.shared
 
     // MARK: -
     var body: some Scene {
@@ -21,6 +24,9 @@ struct EventsReminderApp: App {
                 HomeView(router: router)
             }
             .environment(\.managedObjectContext, coreDataStack.viewContext)
+            .onAppear {
+                eventRepository.fetchEvents()
+            }
         }
     }
 }

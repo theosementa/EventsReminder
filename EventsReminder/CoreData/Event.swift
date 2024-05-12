@@ -45,6 +45,10 @@ public class EventEntity: NSManagedObject, Identifiable {
             return 0
         }
     }
+    
+    public var fullDate: String {
+        return date.formatted(date: .complete, time: date.isMidnight() ? .omitted : .shortened)
+    }
 
 }
 

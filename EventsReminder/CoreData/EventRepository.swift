@@ -8,14 +8,15 @@
 import Foundation
 
 @Observable
-@MainActor final class EventRepository {
+final class EventRepository {
     static let shared = EventRepository()
     let viewContext = CoreDataStack.shared.viewContext
     
     var events: [EventEntity] = []
+    
 }
 
-@MainActor extension EventRepository {
+extension EventRepository {
     
     func fetchEvents() {
         let request = EventEntity.fetchRequest()

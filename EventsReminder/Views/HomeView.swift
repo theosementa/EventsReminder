@@ -12,9 +12,27 @@ struct HomeView: View {
     // Builder
     var router: NavigationManager
     
+    // Custom
+    @State private var eventRepository = EventRepository.shared
+    @State private var viewModel = HomeViewModel()
+    
     // MARK: -
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(eventRepository.events) { event in
+            EventCell(event: event)
+        }
+        .navigationTitle("Events".localized)
+        .searchable(text: $viewModel.searchText, prompt: "Search a event".localized)
+        .toolbar {
+            ToolbarItemGroup(placement: .topBarTrailing) {
+                Button(action: {}, label: {
+                    Image(systemName: "crown.fill")
+                })
+                Button(action: {}, label: {
+                    Image(systemName: "plus")
+                })
+            }
+        }
     } // End body
 } // End struct
 
