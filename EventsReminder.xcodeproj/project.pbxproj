@@ -7,22 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D98AEC692BF103FD005C4AA6 /* EventsReminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AEC682BF103FD005C4AA6 /* EventsReminderApp.swift */; };
+		D98AEC692BF103FD005C4AA6 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AEC682BF103FD005C4AA6 /* App.swift */; };
 		D98AEC6B2BF103FD005C4AA6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AEC6A2BF103FD005C4AA6 /* ContentView.swift */; };
 		D98AEC6D2BF103FE005C4AA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98AEC6C2BF103FE005C4AA6 /* Assets.xcassets */; };
 		D98AEC702BF103FE005C4AA6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98AEC6F2BF103FE005C4AA6 /* Preview Assets.xcassets */; };
-		D98AEC722BF103FE005C4AA6 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AEC712BF103FE005C4AA6 /* Persistence.swift */; };
 		D98AEC752BF103FE005C4AA6 /* EventsReminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D98AEC732BF103FE005C4AA6 /* EventsReminder.xcdatamodeld */; };
+		D98AEC882BF10753005C4AA6 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AEC872BF10753005C4AA6 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D98AEC652BF103FD005C4AA6 /* EventsReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventsReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D98AEC682BF103FD005C4AA6 /* EventsReminderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsReminderApp.swift; sourceTree = "<group>"; };
+		D98AEC682BF103FD005C4AA6 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		D98AEC6A2BF103FD005C4AA6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D98AEC6C2BF103FE005C4AA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D98AEC6F2BF103FE005C4AA6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D98AEC712BF103FE005C4AA6 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		D98AEC742BF103FE005C4AA6 /* EventsReminder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EventsReminder.xcdatamodel; sourceTree = "<group>"; };
+		D98AEC822BF106D5005C4AA6 /* EventsReminder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EventsReminder.entitlements; sourceTree = "<group>"; };
+		D98AEC832BF106E0005C4AA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D98AEC872BF10753005C4AA6 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +57,12 @@
 		D98AEC672BF103FD005C4AA6 /* EventsReminder */ = {
 			isa = PBXGroup;
 			children = (
-				D98AEC682BF103FD005C4AA6 /* EventsReminderApp.swift */,
-				D98AEC6A2BF103FD005C4AA6 /* ContentView.swift */,
-				D98AEC6C2BF103FE005C4AA6 /* Assets.xcassets */,
-				D98AEC712BF103FE005C4AA6 /* Persistence.swift */,
-				D98AEC732BF103FE005C4AA6 /* EventsReminder.xcdatamodeld */,
+				D98AEC832BF106E0005C4AA6 /* Info.plist */,
+				D98AEC822BF106D5005C4AA6 /* EventsReminder.entitlements */,
+				D98AEC682BF103FD005C4AA6 /* App.swift */,
+				D98AEC852BF106F2005C4AA6 /* Views */,
+				D98AEC842BF106ED005C4AA6 /* CoreData */,
+				D98AEC862BF106F6005C4AA6 /* Ressources */,
 				D98AEC6E2BF103FE005C4AA6 /* Preview Content */,
 			);
 			path = EventsReminder;
@@ -71,6 +74,31 @@
 				D98AEC6F2BF103FE005C4AA6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D98AEC842BF106ED005C4AA6 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D98AEC732BF103FE005C4AA6 /* EventsReminder.xcdatamodeld */,
+				D98AEC872BF10753005C4AA6 /* CoreDataStack.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		D98AEC852BF106F2005C4AA6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D98AEC6A2BF103FD005C4AA6 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D98AEC862BF106F6005C4AA6 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				D98AEC6C2BF103FE005C4AA6 /* Assets.xcassets */,
+			);
+			path = Ressources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,10 +171,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D98AEC722BF103FE005C4AA6 /* Persistence.swift in Sources */,
 				D98AEC6B2BF103FD005C4AA6 /* ContentView.swift in Sources */,
 				D98AEC752BF103FE005C4AA6 /* EventsReminder.xcdatamodeld in Sources */,
-				D98AEC692BF103FD005C4AA6 /* EventsReminderApp.swift in Sources */,
+				D98AEC692BF103FD005C4AA6 /* App.swift in Sources */,
+				D98AEC882BF10753005C4AA6 /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,17 +305,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EventsReminder/EventsReminder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EventsReminder/Preview Content\"";
 				DEVELOPMENT_TEAM = 8TMMB69WBG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EventsReminder/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Events Reminder";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,17 +342,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EventsReminder/EventsReminder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EventsReminder/Preview Content\"";
 				DEVELOPMENT_TEAM = 8TMMB69WBG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EventsReminder/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Events Reminder";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
