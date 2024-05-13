@@ -28,7 +28,7 @@ struct EventDetailView: View {
             .ignoresSafeArea()
             .foregroundStyle(event.tag?.color.toColor() ?? Color.componentInComponent)
             
-            VStack {
+            VStack(spacing: 40) {
                 VStack(spacing: 16) {
                     RoundedRectangle(cornerRadius: 16, style: .continuous)
                         .fill(event.tag?.color.toColor() ?? Color.componentInComponent)
@@ -47,14 +47,23 @@ struct EventDetailView: View {
                     }
                 }
                 
+                VStack(spacing: 4) {
+                    Text(event.daysRemaining.formatted())
+                        .font(.system(size: 40, weight: .bold))
+                    
+                    Text("remaining days")
+                        .font(.system(size: 16, weight: .medium))
+                }
+                
+                TimeCell(timeDuration: TimeManager().calculateElapsedTime(from: event.date))
+                                
                 Spacer()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     } // End body
+    
 } // End struct
-
-
 
 // MARK: - Preview
 #Preview {

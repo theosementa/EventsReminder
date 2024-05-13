@@ -20,7 +20,7 @@ public class TagEntity: NSManagedObject, Identifiable {
     @NSManaged public var id: UUID
     @NSManaged public var name: String
     @NSManaged private var colorData: Data
-    @NSManaged public var event: EventEntity?
+    @NSManaged public var events: Set<EventEntity>?
     
     public var color: UIColor {
         get {

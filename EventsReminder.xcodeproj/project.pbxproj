@@ -44,6 +44,8 @@
 		D9DA46052BF276DB003C4C1E /* ListOfTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA46042BF276DB003C4C1E /* ListOfTags.swift */; };
 		D9DA46072BF2783D003C4C1E /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA46062BF2783D003C4C1E /* EventDetailView.swift */; };
 		D9DA46092BF27AE2003C4C1E /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA46082BF27AE2003C4C1E /* UIScreen.swift */; };
+		D9DA460C2BF2965A003C4C1E /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA460B2BF2965A003C4C1E /* TimeManager.swift */; };
+		D9DA460E2BF29688003C4C1E /* TimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA460D2BF29688003C4C1E /* TimeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +89,8 @@
 		D9DA46042BF276DB003C4C1E /* ListOfTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfTags.swift; sourceTree = "<group>"; };
 		D9DA46062BF2783D003C4C1E /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 		D9DA46082BF27AE2003C4C1E /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
+		D9DA460B2BF2965A003C4C1E /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
+		D9DA460D2BF29688003C4C1E /* TimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,7 @@
 				D9959AB02BF1102B00232F77 /* Assets */,
 				D9959AC22BF1148A00232F77 /* Extension */,
 				D9959AD02BF1276900232F77 /* Helper */,
+				D9DA460A2BF2963F003C4C1E /* Manager */,
 				D9959ABF2BF1125200232F77 /* Modifiers */,
 				D9959AB52BF1103500232F77 /* Navigation */,
 			);
@@ -212,6 +217,7 @@
 				D9959AD52BF129D800232F77 /* EmojiTextField.swift */,
 				D9DA45FA2BF266F2003C4C1E /* FilterToolbar.swift */,
 				D9DA46042BF276DB003C4C1E /* ListOfTags.swift */,
+				D9DA460D2BF29688003C4C1E /* TimeCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -256,6 +262,14 @@
 				D9959ACF2BF1276900232F77 /* Swipe Back.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		D9DA460A2BF2963F003C4C1E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D9DA460B2BF2965A003C4C1E /* TimeManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +355,7 @@
 				D9959AC12BF1125E00232F77 /* BackgroundComponentViewModifier.swift in Sources */,
 				D9959AD12BF1276900232F77 /* InteractiveDismissableView.swift in Sources */,
 				D9DA46052BF276DB003C4C1E /* ListOfTags.swift in Sources */,
+				D9DA460E2BF29688003C4C1E /* TimeCell.swift in Sources */,
 				D98AEC8E2BF109A1005C4AA6 /* Event.swift in Sources */,
 				D9959ACD2BF11F0B00232F77 /* CreateNewEventView.swift in Sources */,
 				D9959AB62BF1103500232F77 /* NavigationDirection.swift in Sources */,
@@ -352,6 +367,7 @@
 				D9DA46072BF2783D003C4C1E /* EventDetailView.swift in Sources */,
 				D9959ADA2BF12AAC00232F77 /* MeasureSizeModifier.swift in Sources */,
 				D9959ACB2BF11D3C00232F77 /* String.swift in Sources */,
+				D9DA460C2BF2965A003C4C1E /* TimeManager.swift in Sources */,
 				D9DA46092BF27AE2003C4C1E /* UIScreen.swift in Sources */,
 				D9DA46032BF27556003C4C1E /* UIColor.swift in Sources */,
 				D9DA45FF2BF26C1A003C4C1E /* CreateNewTagView.swift in Sources */,
