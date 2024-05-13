@@ -15,16 +15,28 @@ struct HomeView: View {
     // Custom
     @State private var eventRepository = EventRepository.shared
     @State private var viewModel = HomeViewModel()
+    @State private var filterViewModel = FilterViewModel.shared
     
     // MARK: -
     var body: some View {
-        List(eventRepository.events) { event in
-            EventCell(event: event)
+        List {
+            FilterToolbar()
+                .listRowSeparator(.hidden)
+                .listRowInsets(.init(top: 0, leading: 16, bottom: 6, trailing: 16))
+                .listRowBackground(Color.background.edgesIgnoringSafeArea(.all))
+            ForEach(filterViewModel.eventStatus == .comingSoon ? eventRepository.eventsComingSoon : eventRepository.eventsDone) { event in
+                Button(action: {
+                    router.pushEventDetail(event: event)
+                }, label: {
+                    EventCell(event: event)
+                })
                 .listRowSeparator(.hidden)
                 .listRowInsets(.init(top: 6, leading: 16, bottom: 6, trailing: 16))
                 .listRowBackground(Color.background.edgesIgnoringSafeArea(.all))
+            }
         }
         .listStyle(.plain)
+        .background(Color.background.ignoresSafeArea())
         .navigationTitle("Events".localized)
         .searchable(text: $viewModel.searchText, prompt: "Search a event".localized)
         .toolbar {

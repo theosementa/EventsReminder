@@ -35,6 +35,15 @@
 		D9959AD62BF129D800232F77 /* EmojiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AD52BF129D800232F77 /* EmojiTextField.swift */; };
 		D9959AD82BF129ED00232F77 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AD72BF129ED00232F77 /* Character.swift */; };
 		D9959ADA2BF12AAC00232F77 /* MeasureSizeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AD92BF12AAC00232F77 /* MeasureSizeModifier.swift */; };
+		D9DA45F92BF266C7003C4C1E /* TagRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA45F82BF266C7003C4C1E /* TagRepository.swift */; };
+		D9DA45FB2BF266F2003C4C1E /* FilterToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA45FA2BF266F2003C4C1E /* FilterToolbar.swift */; };
+		D9DA45FD2BF267C9003C4C1E /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA45FC2BF267C9003C4C1E /* FilterViewModel.swift */; };
+		D9DA45FF2BF26C1A003C4C1E /* CreateNewTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA45FE2BF26C1A003C4C1E /* CreateNewTagView.swift */; };
+		D9DA46012BF26D08003C4C1E /* CreateNewTagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA46002BF26D08003C4C1E /* CreateNewTagViewModel.swift */; };
+		D9DA46032BF27556003C4C1E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA46022BF27556003C4C1E /* UIColor.swift */; };
+		D9DA46052BF276DB003C4C1E /* ListOfTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA46042BF276DB003C4C1E /* ListOfTags.swift */; };
+		D9DA46072BF2783D003C4C1E /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA46062BF2783D003C4C1E /* EventDetailView.swift */; };
+		D9DA46092BF27AE2003C4C1E /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA46082BF27AE2003C4C1E /* UIScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +78,15 @@
 		D9959AD52BF129D800232F77 /* EmojiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiTextField.swift; sourceTree = "<group>"; };
 		D9959AD72BF129ED00232F77 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		D9959AD92BF12AAC00232F77 /* MeasureSizeModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasureSizeModifier.swift; sourceTree = "<group>"; };
+		D9DA45F82BF266C7003C4C1E /* TagRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagRepository.swift; sourceTree = "<group>"; };
+		D9DA45FA2BF266F2003C4C1E /* FilterToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterToolbar.swift; sourceTree = "<group>"; };
+		D9DA45FC2BF267C9003C4C1E /* FilterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		D9DA45FE2BF26C1A003C4C1E /* CreateNewTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTagView.swift; sourceTree = "<group>"; };
+		D9DA46002BF26D08003C4C1E /* CreateNewTagViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTagViewModel.swift; sourceTree = "<group>"; };
+		D9DA46022BF27556003C4C1E /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		D9DA46042BF276DB003C4C1E /* ListOfTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfTags.swift; sourceTree = "<group>"; };
+		D9DA46062BF2783D003C4C1E /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
+		D9DA46082BF27AE2003C4C1E /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +149,7 @@
 				D98AEC8A2BF109A1005C4AA6 /* Event.swift */,
 				D9959AAB2BF10C0F00232F77 /* EventRepository.swift */,
 				D98AEC8C2BF109A1005C4AA6 /* Tag.swift */,
+				D9DA45F82BF266C7003C4C1E /* TagRepository.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -140,6 +159,8 @@
 			children = (
 				D9959AA92BF10AE900232F77 /* HomeView.swift */,
 				D9959ACC2BF11F0B00232F77 /* CreateNewEventView.swift */,
+				D9DA45FE2BF26C1A003C4C1E /* CreateNewTagView.swift */,
+				D9DA46062BF2783D003C4C1E /* EventDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,6 +210,8 @@
 			children = (
 				D9959ABB2BF110E800232F77 /* EventCell.swift */,
 				D9959AD52BF129D800232F77 /* EmojiTextField.swift */,
+				D9DA45FA2BF266F2003C4C1E /* FilterToolbar.swift */,
+				D9DA46042BF276DB003C4C1E /* ListOfTags.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -209,6 +232,8 @@
 				D9959AC32BF1149300232F77 /* Date.swift */,
 				D9959AC52BF11A5B00232F77 /* Optionnal.swift */,
 				D9959ACA2BF11D3C00232F77 /* String.swift */,
+				D9DA46022BF27556003C4C1E /* UIColor.swift */,
+				D9DA46082BF27AE2003C4C1E /* UIScreen.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -218,6 +243,8 @@
 			children = (
 				D9959AC82BF11CF200232F77 /* HomeViewModel.swift */,
 				D9959AD32BF1278D00232F77 /* CreateNewEventViewModel.swift */,
+				D9DA46002BF26D08003C4C1E /* CreateNewTagViewModel.swift */,
+				D9DA45FC2BF267C9003C4C1E /* FilterViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -313,19 +340,28 @@
 				D9959AD42BF1278D00232F77 /* CreateNewEventViewModel.swift in Sources */,
 				D9959AC12BF1125E00232F77 /* BackgroundComponentViewModifier.swift in Sources */,
 				D9959AD12BF1276900232F77 /* InteractiveDismissableView.swift in Sources */,
+				D9DA46052BF276DB003C4C1E /* ListOfTags.swift in Sources */,
 				D98AEC8E2BF109A1005C4AA6 /* Event.swift in Sources */,
 				D9959ACD2BF11F0B00232F77 /* CreateNewEventView.swift in Sources */,
 				D9959AB62BF1103500232F77 /* NavigationDirection.swift in Sources */,
+				D9DA46012BF26D08003C4C1E /* CreateNewTagViewModel.swift in Sources */,
+				D9DA45FD2BF267C9003C4C1E /* FilterViewModel.swift in Sources */,
 				D9959ABC2BF110E800232F77 /* EventCell.swift in Sources */,
 				D9959AD82BF129ED00232F77 /* Character.swift in Sources */,
 				D98AEC902BF109A1005C4AA6 /* Tag.swift in Sources */,
+				D9DA46072BF2783D003C4C1E /* EventDetailView.swift in Sources */,
 				D9959ADA2BF12AAC00232F77 /* MeasureSizeModifier.swift in Sources */,
 				D9959ACB2BF11D3C00232F77 /* String.swift in Sources */,
+				D9DA46092BF27AE2003C4C1E /* UIScreen.swift in Sources */,
+				D9DA46032BF27556003C4C1E /* UIColor.swift in Sources */,
+				D9DA45FF2BF26C1A003C4C1E /* CreateNewTagView.swift in Sources */,
 				D9959AAC2BF10C0F00232F77 /* EventRepository.swift in Sources */,
+				D9DA45FB2BF266F2003C4C1E /* FilterToolbar.swift in Sources */,
 				D98AEC692BF103FD005C4AA6 /* App.swift in Sources */,
 				D98AEC882BF10753005C4AA6 /* CoreDataStack.swift in Sources */,
 				D9959AD62BF129D800232F77 /* EmojiTextField.swift in Sources */,
 				D9959AC62BF11A5B00232F77 /* Optionnal.swift in Sources */,
+				D9DA45F92BF266C7003C4C1E /* TagRepository.swift in Sources */,
 				D9959AB72BF1103500232F77 /* NavigationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

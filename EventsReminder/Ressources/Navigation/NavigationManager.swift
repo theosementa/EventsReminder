@@ -14,6 +14,10 @@ class NavigationManager: Router {
         navigateTo(.home)
     }
     
+    func pushEventDetail(event: EventEntity) {
+        navigateTo(.eventDetail(event: event))
+    }
+    
     // sheet
     func presentCreateNewEvent(dismissAction: (() -> Void)? = nil) {
         presentSheet(.createNewEvent, dismissAction)
@@ -36,6 +40,8 @@ private extension NavigationManager {
                 HomeView(router: router(route: route))
             case .createNewEvent:
                 CreateNewEventView()
+            case .eventDetail(let event):
+                EventDetailView(event: event)
             }
         }
     }

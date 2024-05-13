@@ -11,6 +11,7 @@ struct CreateNewEventView: View {
     
     // Custom
     @State private var viewModel = CreateNewEventViewModel()
+    @State private var tagRepository = TagRepository.shared
     
     // Environment
     @Environment(\.dismiss) private var dismiss
@@ -22,7 +23,7 @@ struct CreateNewEventView: View {
                 VStack(spacing: 40) {
                     VStack(spacing: 16) {
                         HStack(spacing: 16) {
-                            EmojiTextField(text: $viewModel.emoji, placeholder: "🎂")
+                            EmojiTextField(text: $viewModel.emoji)
                                 .frame(width: 24, height: 24)
                                 .backgroundComponent(isInSheet: true)
                             
@@ -30,17 +31,30 @@ struct CreateNewEventView: View {
                                 .fontWeight(.medium)
                                 .frame(maxWidth: .infinity)
                                 .backgroundComponent(isInSheet: true)
-                                .measureSize { size in
-                                    viewModel.heightOfTextField = size.height
-                                }
                         }
                         
-                        HStack {
-                            Text("Tag")
-                                .fontWeight(.medium)
-                            Spacer()
+                        NavigationLink {
+                            ListOfTags(tag: $viewModel.tag)
+                        } label: {
+                            HStack {
+                                Text("Tag")
+                                    .fontWeight(.medium)
+                                Spacer()
+                                if let tag = viewModel.tag {
+                                    Text(tag.name)
+                                        .foregroundStyle(tag.color.toColor())
+                                        .padding(6)
+                                        .background {
+                                            RoundedRectangle(cornerRadius: 6, style: .continuous)
+                                                .fill(tag.color.toColor().opacity(0.3))
+                                        }
+                                }
+                                Image(systemName: "chevron.right")
+                            }
+                            .foregroundStyle(Color(uiColor: .label))
+                            .backgroundComponent(isInSheet: true)
                         }
-                        .backgroundComponent(isInSheet: true)
+
                     }
                     
                     VStack {

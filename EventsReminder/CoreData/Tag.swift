@@ -20,43 +20,26 @@ public class TagEntity: NSManagedObject, Identifiable {
     @NSManaged public var id: UUID
     @NSManaged public var name: String
     @NSManaged private var colorData: Data
-    @NSManaged public var events: Set<EventEntity>?
+    @NSManaged public var event: EventEntity?
     
-    public var color: Color {
+    public var color: UIColor {
         get {
             do {
-                return try Color(NSKeyedUnarchiver.unarchivedObject(ofClass: UIColor.self, from: colorData)!)
+                return try NSKeyedUnarchiver.unarchivedObject(ofClass: UIColor.self, from: colorData)!
             } catch {
                 print(error)
             }
             
-            return Color.clear
+            return UIColor(Color.clear)
         }
         set {
             do {
-                try colorData = NSKeyedArchiver.archivedData(withRootObject: UIColor(newValue), requiringSecureCoding: false)
+                try colorData = NSKeyedArchiver.archivedData(withRootObject: newValue, requiringSecureCoding: false)
             } catch {
                 print(error)
             }
         }
     }
-
-}
-
-// MARK: Generated accessors for events
-extension TagEntity {
-
-    @objc(addEventsObject:)
-    @NSManaged public func addToEvents(_ value: EventEntity)
-
-    @objc(removeEventsObject:)
-    @NSManaged public func removeFromEvents(_ value: EventEntity)
-
-    @objc(addEvents:)
-    @NSManaged public func addToEvents(_ values: NSSet)
-
-    @objc(removeEvents:)
-    @NSManaged public func removeFromEvents(_ values: NSSet)
 
 }
 

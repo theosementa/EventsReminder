@@ -13,6 +13,19 @@ final class EventRepository {
     let viewContext = CoreDataStack.shared.viewContext
     
     var events: [EventEntity] = []
+}
+
+extension EventRepository {
+    
+    var eventsComingSoon: [EventEntity] {
+        return events
+            .filter { $0.daysRemaining >= 0 }
+    }
+    
+    var eventsDone: [EventEntity] {
+        return events
+            .filter { $0.daysRemaining < 0 }
+    }
     
 }
 

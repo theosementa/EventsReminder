@@ -15,7 +15,8 @@ struct EventsReminderApp: App {
     private let router = NavigationManager(isPresented: .constant(.home))
     
     // Custom
-    private let eventRepository: EventRepository = EventRepository.shared
+    private let eventRepository = EventRepository.shared
+    private let tagRepository = TagRepository.shared
 
     // MARK: -
     var body: some Scene {
@@ -26,6 +27,7 @@ struct EventsReminderApp: App {
             .environment(\.managedObjectContext, coreDataStack.viewContext)
             .onAppear {
                 eventRepository.fetchEvents()
+                tagRepository.fetchTags()
             }
         }
     }

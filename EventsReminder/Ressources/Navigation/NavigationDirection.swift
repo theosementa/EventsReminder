@@ -11,6 +11,7 @@ import SwiftUI
 enum NavigationDirection: Identifiable {
     case home
     case createNewEvent
+    case eventDetail(event: EventEntity)
     
     var id: String {
         switch self {
@@ -18,6 +19,8 @@ enum NavigationDirection: Identifiable {
             return "home"
         case .createNewEvent:
             return "createNewEvent"
+        case .eventDetail(let event):
+            return "eventDetail_\(event.id)"
         }
     }
 }
@@ -29,8 +32,8 @@ extension NavigationDirection: Equatable {
             (.createNewEvent, .createNewEvent):
             return true
             
-//        case let (.createVehicleSheet(lhsVehicleSheet), .createVehicleSheet(rhsVehicleSheet)):
-//            return lhsVehicleSheet == rhsVehicleSheet
+        case let (.eventDetail(lhsEvent), .eventDetail(rhsEvent)):
+            return lhsEvent.id == rhsEvent.id
             
         default:
             return false

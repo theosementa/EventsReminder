@@ -32,13 +32,13 @@ struct EventCell: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             
             Text(event.daysRemaining.formatted())
-                .foregroundStyle(event.tag?.color ?? Color(uiColor: .label))
+                .foregroundStyle(event.tag?.color.toColor() ?? Color(uiColor: .label))
                 .font(.system(size: 24, weight: .bold))
                 .frame(minWidth: 28)
                 .frame(height: 28)
                 .backgroundComponent(
-                    containerColor: event.tag?.color.opacity(0.3) ?? nil,
-                    strokeColor: event.tag?.color ?? nil
+                    containerColor: event.tag?.color.toColor().opacity(0.3) ?? nil,
+                    strokeColor: event.tag?.color.toColor() ?? nil
                 )
         }
         .backgroundComponent()

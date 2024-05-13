@@ -9,6 +9,18 @@ import Foundation
 
 extension Date {
     
+    func dateAtMidnight() -> Date {
+        let calendar = Calendar.current
+        
+        let components = calendar.dateComponents([.year, .month, .day], from: self)
+        
+        if let midnightDate = calendar.date(from: components) {
+            return midnightDate
+        } else {
+            return self
+        }
+    }
+    
     func isMidnight() -> Bool {
         let calendar = Calendar.current
         

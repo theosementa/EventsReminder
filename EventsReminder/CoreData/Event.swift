@@ -47,7 +47,18 @@ public class EventEntity: NSManagedObject, Identifiable {
     }
     
     public var fullDate: String {
-        return date.formatted(date: .complete, time: date.isMidnight() ? .omitted : .shortened)
+        var dateFormat: String {
+            if Locale.current.identifier.contains("en") {
+                return "E d MMMM yyyy" + (date.isMidnight() ? "" : ", h:mm a")
+            } else {
+                return "E d MMMM yyyy" + (date.isMidnight() ? "" : ", HH:mm")
+            }
+        }
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.current
+        dateFormatter.dateFormat = dateFormat
+        return dateFormatter.string(from: date)
     }
 
 }
