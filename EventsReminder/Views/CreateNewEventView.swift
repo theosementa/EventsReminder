@@ -146,7 +146,7 @@ struct CreateNewEventView: View {
             } // End ScrollView
             .scrollDismissesKeyboard(.immediately)
             .scrollIndicators(.hidden)
-            .navigationTitle("New event".localized)
+            .navigationTitle(viewModel.event.isNotNil() ? "Update event" : "New event".localized)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {

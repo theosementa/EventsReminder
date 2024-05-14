@@ -13,4 +13,8 @@ extension Optional {
         return self == nil
     }
     
+    func isNotNil() -> Bool {
+        return self != nil
+    }
+    
 }

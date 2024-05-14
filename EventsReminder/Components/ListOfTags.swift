@@ -35,7 +35,7 @@ struct ListOfTags: View {
                         .padding(4)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .backgroundComponent(
-                            containerColor: tag.color.toColor().opacity(0.3),
+                            containerColor: tag.color.toColor().opacity(0.2),
                             strokeColor: tag.color.toColor()
                         )
                 }

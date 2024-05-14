@@ -61,7 +61,7 @@ struct EventDetailView: View {
                     Text(event.daysRemaining.formatted())
                         .font(.system(size: 40, weight: .bold))
                     
-                    Text("remaining days")
+                    Text("days remaining")
                         .font(.system(size: 16, weight: .medium))
                 }
                 

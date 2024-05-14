@@ -35,6 +35,7 @@
 		D9959AD62BF129D800232F77 /* EmojiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AD52BF129D800232F77 /* EmojiTextField.swift */; };
 		D9959AD82BF129ED00232F77 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AD72BF129ED00232F77 /* Character.swift */; };
 		D9959ADA2BF12AAC00232F77 /* MeasureSizeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AD92BF12AAC00232F77 /* MeasureSizeModifier.swift */; };
+		D9CD929F2BF3DA8D00929E0F /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CD929E2BF3DA8D00929E0F /* EventManager.swift */; };
 		D9DA45F92BF266C7003C4C1E /* TagRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA45F82BF266C7003C4C1E /* TagRepository.swift */; };
 		D9DA45FB2BF266F2003C4C1E /* FilterToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA45FA2BF266F2003C4C1E /* FilterToolbar.swift */; };
 		D9DA45FD2BF267C9003C4C1E /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA45FC2BF267C9003C4C1E /* FilterViewModel.swift */; };
@@ -80,6 +81,7 @@
 		D9959AD52BF129D800232F77 /* EmojiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiTextField.swift; sourceTree = "<group>"; };
 		D9959AD72BF129ED00232F77 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		D9959AD92BF12AAC00232F77 /* MeasureSizeModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasureSizeModifier.swift; sourceTree = "<group>"; };
+		D9CD929E2BF3DA8D00929E0F /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		D9DA45F82BF266C7003C4C1E /* TagRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagRepository.swift; sourceTree = "<group>"; };
 		D9DA45FA2BF266F2003C4C1E /* FilterToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterToolbar.swift; sourceTree = "<group>"; };
 		D9DA45FC2BF267C9003C4C1E /* FilterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				D98AEC732BF103FE005C4AA6 /* EventsReminder.xcdatamodeld */,
 				D98AEC8A2BF109A1005C4AA6 /* Event.swift */,
 				D9959AAB2BF10C0F00232F77 /* EventRepository.swift */,
+				D9CD929E2BF3DA8D00929E0F /* EventManager.swift */,
 				D98AEC8C2BF109A1005C4AA6 /* Tag.swift */,
 				D9DA45F82BF266C7003C4C1E /* TagRepository.swift */,
 			);
@@ -372,6 +375,7 @@
 				D9DA46032BF27556003C4C1E /* UIColor.swift in Sources */,
 				D9DA45FF2BF26C1A003C4C1E /* CreateNewTagView.swift in Sources */,
 				D9959AAC2BF10C0F00232F77 /* EventRepository.swift in Sources */,
+				D9CD929F2BF3DA8D00929E0F /* EventManager.swift in Sources */,
 				D9DA45FB2BF266F2003C4C1E /* FilterToolbar.swift in Sources */,
 				D98AEC692BF103FD005C4AA6 /* App.swift in Sources */,
 				D98AEC882BF10753005C4AA6 /* CoreDataStack.swift in Sources */,

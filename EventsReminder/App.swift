@@ -27,6 +27,7 @@ struct EventsReminderApp: App {
             .environment(\.managedObjectContext, coreDataStack.viewContext)
             .task {
                 await eventRepository.fetchEvents()
+                EventManager.shared.updatePastEventsToNextValidDate()
             }
             .onAppear {
                 tagRepository.fetchTags()

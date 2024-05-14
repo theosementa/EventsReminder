@@ -33,4 +33,21 @@ extension Date {
         }
     }
     
+    func advancedByOneMonth() -> Date {
+        let calendar = Calendar.current
+        if let newDate = calendar.date(byAdding: .month, value: 1, to: self) {
+            return newDate
+        } else {
+            return self
+        }
+    }
+    
+    func advancedByOneYear() -> Date {
+        let calendar = Calendar.current
+        if let newDate = calendar.date(byAdding: .year, value: 1, to: self) {
+            return newDate
+        } else {
+            return self
+        }
+    }
 }
