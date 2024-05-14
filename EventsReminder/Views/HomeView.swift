@@ -12,10 +12,13 @@ struct HomeView: View {
     // Builder
     var router: NavigationManager
     
-    // Custom
+    // Repository
     @State private var eventRepository = EventRepository.shared
+    
+    // Custom
     @State private var viewModel = HomeViewModel()
     @State private var filterViewModel = FilterViewModel.shared
+    @State private var createNewEventViewModel = CreateNewEventViewModel()
     
     // MARK: -
     var body: some View {
@@ -44,7 +47,11 @@ struct HomeView: View {
                 Button(action: {}, label: {
                     Image(systemName: "crown.fill")
                 })
-                Button(action: { router.presentCreateNewEvent() }, label: {
+                Button(action: { 
+                    router.presentCreateNewEvent(viewModel: $createNewEventViewModel) {
+                        createNewEventViewModel.resetData()
+                    }
+                }, label: {
                     Image(systemName: "plus")
                 })
             }

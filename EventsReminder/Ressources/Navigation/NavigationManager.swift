@@ -19,8 +19,8 @@ class NavigationManager: Router {
     }
     
     // sheet
-    func presentCreateNewEvent(dismissAction: (() -> Void)? = nil) {
-        presentSheet(.createNewEvent, dismissAction)
+    func presentCreateNewEvent(viewModel: Binding<CreateNewEventViewModel>, dismissAction: (() -> Void)? = nil) {
+        presentSheet(.createNewEvent(viewModel: viewModel), dismissAction)
     }
     
 
@@ -38,10 +38,10 @@ private extension NavigationManager {
             switch direction {
             case .home:
                 HomeView(router: router(route: route))
-            case .createNewEvent:
-                CreateNewEventView()
+            case .createNewEvent(let viewModel):
+                CreateNewEventView(viewModel: viewModel)
             case .eventDetail(let event):
-                EventDetailView(event: event)
+                EventDetailView(router: router(route: route), event: event)
             }
         }
     }

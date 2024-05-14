@@ -10,7 +10,17 @@ import SwiftUI
 struct EventDetailView: View {
     
     // Builder
+    var router: NavigationManager
     @ObservedObject var event: EventEntity
+    
+    // Repository
+    @State private var eventRepository: EventRepository = .shared
+    
+    // Custom
+    @State private var createNewEventViewModel = CreateNewEventViewModel()
+    
+    // Environment
+    @Environment(\.dismiss) private var dismiss
     
     // MARK: -
     var body: some View {
@@ -60,6 +70,36 @@ struct EventDetailView: View {
                 Spacer()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+        } // End ZStack
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Menu {
+                    Button(action: {
+                        self.createNewEventViewModel = CreateNewEventViewModel(
+                            emoji: event.emoji,
+                            name: event.name,
+                            tag: event.tag,
+                            date: event.date,
+                            repeatType: event.repeatType,
+                            event: event
+                        )
+                        router.presentCreateNewEvent(viewModel: $createNewEventViewModel) {
+                            createNewEventViewModel.resetData()
+                        }
+                    }, label: {
+                        Label("Edit", systemImage: "pencil")
+                    })
+                    
+                    Button(role: .destructive, action: {
+                        dismiss()
+                        eventRepository.deleteEvent(event)
+                    }, label: {
+                        Label("Delete", systemImage: "trash.fill")
+                    })
+                } label: {
+                    Image(systemName: "ellipsis")
+                }
+            }
         }
     } // End body
     
@@ -67,5 +107,5 @@ struct EventDetailView: View {
 
 // MARK: - Preview
 #Preview {
-    EventDetailView(event: .preview1)
+    EventDetailView(router: .init(isPresented: .constant(nil)), event: .preview1)
 }

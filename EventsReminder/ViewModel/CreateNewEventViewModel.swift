@@ -15,13 +15,15 @@ final class CreateNewEventViewModel {
     var tag: TagEntity?
     var date: Date
     var repeatType: Repeat
+    var event: EventEntity?
     
-    init(emoji: String = "🎂", name: String = "", tag: TagEntity? = nil, date: Date = .now, repeatType: Repeat = .none) {
+    init(emoji: String = "🎂", name: String = "", tag: TagEntity? = nil, date: Date = .now, repeatType: Repeat = .none, event: EventEntity? = nil) {
         self.emoji = emoji
         self.name = name
         self.tag = tag
         self.date = date
         self.repeatType = repeatType
+        self.event = event
     }
     
     var allDay: Bool = true
@@ -65,13 +67,42 @@ extension CreateNewEventViewModel {
         } else { return }
     }
     
+    func updateEvent(_ event: EventEntity) {
+        if canEventBeCreated() {
+            EventRepository.shared.updateEvent(
+                event: event,
+                name: name,
+                emoji: emoji,
+                date: allDay ? date.dateAtMidnight() : date,
+                repeatType: repeatType,
+                tag: tag
+            )
+        } else { return }
+    }
+    
+    func resetData() {
+        self.emoji = "🎂"
+        self.name = ""
+        self.tag = nil
+        self.date = .now
+        self.repeatType = .none
+        
+        self.allDay = true
+        self.notifOneDayBefore = false
+        self.notifThreeDayBefore = false
+        self.notifOneWeekBefore = false
+        self.notifOneMonthBefore = false
+        
+        self.presentingConfirmationDialog = false
+    }
+    
 }
 
 // MARK: - Verification
 extension CreateNewEventViewModel {
     
     func canEventBeCreated() -> Bool {
-        if !emoji.isEmpty || !name.isEmpty {
+        if !emoji.isEmpty && !name.isEmpty {
             return true
         } else {
             return false

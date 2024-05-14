@@ -46,7 +46,6 @@ class CoreDataStack {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
-        
     }
     
     #if DEBUG

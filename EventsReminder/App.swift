@@ -25,8 +25,10 @@ struct EventsReminderApp: App {
                 HomeView(router: router)
             }
             .environment(\.managedObjectContext, coreDataStack.viewContext)
+            .task {
+                await eventRepository.fetchEvents()
+            }
             .onAppear {
-                eventRepository.fetchEvents()
                 tagRepository.fetchTags()
             }
         }

@@ -9,8 +9,10 @@ import SwiftUI
 
 struct CreateNewEventView: View {
     
-    // Custom
-    @State private var viewModel = CreateNewEventViewModel()
+    // Builder
+    @Binding var viewModel: CreateNewEventViewModel
+    
+    // Repository
     @State private var tagRepository = TagRepository.shared
     
     // Environment
@@ -155,10 +157,12 @@ struct CreateNewEventView: View {
                 
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
-                        if viewModel.canEventBeCreated() {
+                        if let event = viewModel.event {
+                            viewModel.updateEvent(event)
+                        } else {
                             viewModel.createNewEvent()
-                            dismiss()
                         }
+                        dismiss()
                     }, label: {
                         Text("Save".localized)
                     })
@@ -180,7 +184,7 @@ struct CreateNewEventView: View {
 #Preview {
     Text("HEHO")
         .sheet(isPresented: .constant(true)) {
-        CreateNewEventView()
+            CreateNewEventView(viewModel: .constant(.init()))
             .preferredColorScheme(.dark)
     }
 }

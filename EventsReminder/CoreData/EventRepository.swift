@@ -20,18 +20,21 @@ extension EventRepository {
     var eventsComingSoon: [EventEntity] {
         return events
             .filter { $0.daysRemaining >= 0 }
+            .sorted(by: { $0.daysRemaining < $1.daysRemaining })
     }
     
     var eventsDone: [EventEntity] {
         return events
             .filter { $0.daysRemaining < 0 }
+            .sorted(by: { $0.daysRemaining < $1.daysRemaining })
     }
     
 }
 
 extension EventRepository {
     
-    func fetchEvents() {
+    @MainActor
+    func fetchEvents() async {
         let request = EventEntity.fetchRequest()
         do {
             self.events = []
@@ -59,10 +62,25 @@ extension EventRepository {
             .sorted(by: { $0.daysRemaining < $1.daysRemaining })
     }
     
+    func updateEvent(event: EventEntity, name: String, emoji: String, date: Date, repeatType: Repeat, tag: TagEntity?) {
+        event.name = name
+        event.emoji = emoji
+        event.date = date
+        event.repeatType = repeatType
+        event.tag = tag
+        
+        CoreDataStack.shared.saveContext()
+        
+        self.events = events
+            .sorted(by: { $0.daysRemaining < $1.daysRemaining })
+    }
+    
     func deleteEvent(_ event: EventEntity) {
         viewContext.delete(event)
-        CoreDataStack.shared.saveContext()
-        fetchEvents()
+        Task {
+            await fetchEvents()
+            CoreDataStack.shared.saveContext()
+        }
     }
     
 }
