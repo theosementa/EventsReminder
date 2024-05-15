@@ -1,17 +1,16 @@
 //
-//  SmallWidget2.swift
+//  SmallWidget1.swift
 //  EventsReminder
 //
 //  Created by KaayZenn on 15/05/2024.
 //
 
 import SwiftUI
-import WidgetKit
 
-struct SmallWidget2: View {
+struct SmallWidget1: View {
     
     // Builder
-    var entry: SimpleEntry
+    var entry: IntentEntry
     
     // MARK: -
     var body: some View {
@@ -20,8 +19,6 @@ struct SmallWidget2: View {
                 VStack(spacing: -4) {
                     Text(event.daysRemaining.formatted())
                         .font(.system(size: 40, weight: .bold))
-                        .foregroundStyle(event.tag?.color.toColor() ?? Color(uiColor: .label))
-                    
                     Text("days remaining")
                         .font(.system(size: 14, weight: .medium))
                 }
@@ -35,10 +32,10 @@ struct SmallWidget2: View {
             .background {
                 ZStack {
                     Rectangle()
-                        .fill(Color.backgroundComponent)
+                        .fill(event.tag?.color.toColor().opacity(0.3) ?? Color.backgroundComponent)
                     
                     ContainerRelativeShape()
-                        .stroke(Color.componentInComponent, lineWidth: 6)
+                        .stroke(event.tag?.color.toColor() ?? Color.componentInComponent, lineWidth: 6)
                 }
             }
         } else {

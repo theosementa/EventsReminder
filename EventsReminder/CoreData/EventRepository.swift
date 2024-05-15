@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import WidgetKit
 
 @Observable
 final class EventRepository {
@@ -60,6 +61,8 @@ extension EventRepository {
         events.append(newEvent)
         self.events = events
             .sorted(by: { $0.daysRemaining < $1.daysRemaining })
+        
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
     func updateEvent(event: EventEntity, name: String, emoji: String, date: Date, repeatType: Repeat, tag: TagEntity?) {
@@ -73,6 +76,8 @@ extension EventRepository {
         
         self.events = events
             .sorted(by: { $0.daysRemaining < $1.daysRemaining })
+        
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
     func deleteEvent(_ event: EventEntity) {
@@ -80,6 +85,7 @@ extension EventRepository {
         Task {
             await fetchEvents()
             CoreDataStack.shared.saveContext()
+            WidgetCenter.shared.reloadAllTimelines()
         }
     }
     

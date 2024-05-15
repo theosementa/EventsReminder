@@ -13,5 +13,6 @@ struct EventsReminderWidgetBundle: WidgetBundle {
     var body: some Widget {
         EventsReminderWidget()
         EventsReminderWidget2()
+        EventsReminderWidget3()
     }
 }

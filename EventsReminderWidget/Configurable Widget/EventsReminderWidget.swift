@@ -50,5 +50,5 @@ struct EventsReminderWidget: Widget {
 #Preview(as: .systemSmall) {
     EventsReminderWidget()
 } timeline: {
-    SimpleEntry(date: .now, configuration: ConfigurationIntent(), event: EventEntity.preview1)
+    IntentEntry(date: .now, configuration: ConfigurationIntent(), event: EventEntity.preview1)
 }

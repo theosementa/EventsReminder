@@ -14,20 +14,20 @@ struct Provider: IntentTimelineProvider {
     let eventRepository = EventRepository.shared
     
     // Placeholder
-    func placeholder(in context: Context) -> SimpleEntry {
+    func placeholder(in context: Context) -> IntentEntry {
         let event: EventEntity? = eventRepository.fetchTheNextEventForDisplayInWidget()
-        return SimpleEntry(date: .now, configuration: ConfigurationIntent(), event: event)
+        return IntentEntry(date: .now, configuration: ConfigurationIntent(), event: event)
     }
 
     // Snapshot
-    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
+    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (IntentEntry) -> ()) {
         let event: EventEntity? = eventRepository.fetchTheNextEventForDisplayInWidget()
-        let entry = SimpleEntry(date: .now, configuration: configuration, event: event)
+        let entry = IntentEntry(date: .now, configuration: configuration, event: event)
         completion(entry)
     }
     
     // Timeline
-    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> ()) {
+    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<IntentEntry>) -> ()) {
         var event: EventEntity? = nil
         
         if let showSoonestEvent = configuration.showSoonestEvent, showSoonestEvent.boolValue {
@@ -45,13 +45,13 @@ struct Provider: IntentTimelineProvider {
             }
         }
         
-        var entries: [SimpleEntry] = []
+        var entries: [IntentEntry] = []
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration, event: event)
+            let entry = IntentEntry(date: entryDate, configuration: configuration, event: event)
             entries.append(entry)
         }
 
