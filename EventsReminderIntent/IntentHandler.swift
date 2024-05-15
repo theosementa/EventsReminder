@@ -10,27 +10,12 @@ import Intents
 class IntentHandler: INExtension, ConfigurationIntentHandling {
     
     // Repository
-    let eventRepository: EventRepository = .shared
+    let eventRepository = EventRepository.shared
     
-    func defaultParameter(for intent: ConfigurationIntent) -> EventForWidget? {
-        Task {
-            await eventRepository.fetchEvents()
-        }
-        
-        let events: [EventEntity] = eventRepository.events
-        
-        if let firstEvent = events.first {
-            let eventForWidget = EventForWidget(identifier: firstEvent.id.uuidString, display: firstEvent.name)
-            return eventForWidget
-        } else { return nil }
-    }
+//    func defaultParameter(for intent: ConfigurationIntent)
     
-    func provideParameterOptionsCollection(for intent: ConfigurationIntent, with completion: @escaping (INObjectCollection<EventForWidget>?, (any Error)?) -> Void) {
-        Task {
-            await eventRepository.fetchEvents()
-        }
-        
-        let events: [EventEntity] = eventRepository.events
+    func provideEventForWidgetOptionsCollection(for intent: ConfigurationIntent, with completion: @escaping (INObjectCollection<EventForWidget>?, (any Error)?) -> Void) {
+        let events: [EventEntity] = eventRepository.fetchEventsForWidget()
         
         let eventsToEventForWidget = events
             .map { EventForWidget(identifier: $0.id.uuidString, display: $0.name) }

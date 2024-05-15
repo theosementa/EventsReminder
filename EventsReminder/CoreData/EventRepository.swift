@@ -46,19 +46,6 @@ extension EventRepository {
         }
     }
     
-    func fetchEventWithCustomRequestForDisplayInWidget(eventID: String) -> EventEntity? {
-        let request = EventEntity.fetchRequest()
-        request.predicate = NSPredicate(format: "id == %@", UUID(uuidString: eventID)! as CVarArg)
-        
-        do {
-            let results = try viewContext.fetch(request)
-            return results.first
-        } catch let error as NSError{
-            print("Could not fetch.\(error.userInfo)")
-            return nil
-        }
-    }
-    
     func createEvent(name: String, emoji: String, date: Date, repeatType: Repeat, tag: TagEntity?) {
         let newEvent = EventEntity(context: viewContext)
         newEvent.id = UUID()
@@ -97,3 +84,45 @@ extension EventRepository {
     }
     
 }
+
+// MARK: - WidgetHelper
+extension EventRepository {
+    
+    func fetchEventsForWidget() -> [EventEntity] {
+        let request = EventEntity.fetchRequest()
+        do {
+            self.events = []
+            let events = try self.viewContext.fetch(request)
+            return events
+                .sorted(by: { $0.daysRemaining < $1.daysRemaining })
+        } catch { return [] }
+    }
+    
+    func fetchEventWithCustomRequestForDisplayInWidget(eventID: String) -> EventEntity? {
+        let request = EventEntity.fetchRequest()
+        request.predicate = NSPredicate(format: "id == %@", UUID(uuidString: eventID)! as CVarArg)
+        
+        do {
+            let results = try self.viewContext.fetch(request)
+            return results.first
+        } catch let error as NSError{
+            print("Could not fetch.\(error.userInfo)")
+            return nil
+        }
+    }
+    
+    func fetchTheNextEventForDisplayInWidget() -> EventEntity? {
+        let request = EventEntity.fetchRequest()
+        
+        do {
+            let results = try self.viewContext.fetch(request)
+            return results
+                .sorted(by: { $0.daysRemaining < $1.daysRemaining })
+                .first
+        } catch let error as NSError{
+            print("Could not fetch.\(error.userInfo)")
+            return nil
+        }
+    }
+    
+} // End extension

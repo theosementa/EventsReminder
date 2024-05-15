@@ -10,39 +10,40 @@ import WidgetKit
 
 struct Provider: IntentTimelineProvider {
     
+    // Repository
+    let eventRepository = EventRepository.shared
+    
     // Placeholder
     func placeholder(in context: Context) -> SimpleEntry {
-        let eventRepository: EventRepository = .shared
-
-        Task {
-            await eventRepository.fetchEvents()
-        }
-        
-        let event: EventEntity? = eventRepository.events.first
-        
+        let event: EventEntity? = eventRepository.fetchTheNextEventForDisplayInWidget()
         return SimpleEntry(date: .now, configuration: ConfigurationIntent(), event: event)
     }
 
     // Snapshot
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let eventRepository: EventRepository = .shared
-
-        Task {
-            await eventRepository.fetchEvents()
-        }
-        let event: EventEntity? = eventRepository.events.first
-        
+        let event: EventEntity? = eventRepository.fetchTheNextEventForDisplayInWidget()
         let entry = SimpleEntry(date: .now, configuration: configuration, event: event)
         completion(entry)
     }
     
     // Timeline
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> ()) {
-        let eventRepository: EventRepository = .shared
+        var event: EventEntity? = nil
         
-        let event: EventEntity? = eventRepository.fetchEventWithCustomRequestForDisplayInWidget(
-            eventID: configuration.parameter!.identifier!
-        )
+        if let showSoonestEvent = configuration.showSoonestEvent, showSoonestEvent.boolValue {
+            event = eventRepository.fetchTheNextEventForDisplayInWidget()
+        } else {
+            if let eventForWidget = configuration.eventForWidget, let eventFoundByID = eventRepository.fetchEventWithCustomRequestForDisplayInWidget(
+                eventID: eventForWidget.identifier!
+            ) {
+                event = eventFoundByID
+            } else {
+                event = eventRepository.fetchTheNextEventForDisplayInWidget()
+                if let event {
+                    configuration.eventForWidget = event.toEventForWidget()
+                }
+            }
+        }
         
         var entries: [SimpleEntry] = []
 

@@ -63,6 +63,15 @@ public class EventEntity: NSManagedObject, Identifiable {
 
 }
 
+// MARK: - Helper
+extension EventEntity {
+    
+    func toEventForWidget() -> EventForWidget {
+        return EventForWidget(identifier: self.id.uuidString, display: self.name)
+    }
+    
+}
+
 // MARK: - Preview
 extension EventEntity {
     
