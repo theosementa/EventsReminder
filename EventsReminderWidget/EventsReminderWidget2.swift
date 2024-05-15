@@ -1,6 +1,6 @@
 //
-//  EventsReminderWidget.swift
-//  EventsReminderWidget
+//  EventsReminderWidget2.swift
+//  EventsReminder
 //
 //  Created by KaayZenn on 15/05/2024.
 //
@@ -8,7 +8,7 @@
 import WidgetKit
 import SwiftUI
 
-struct EventsReminderWidgetEntryView : View {
+struct EventsReminderWidgetEntryView2: View {
     
     // Builder
     var entry: Provider.Entry
@@ -18,7 +18,7 @@ struct EventsReminderWidgetEntryView : View {
     
     // MARK: -
     var body: some View {
-        SmallWidget1(entry: entry)
+        SmallWidget2(entry: entry)
 //        if let event = entry.event {
 //            SmallWidget1(entry: entry)
 //        } else {
@@ -27,8 +27,8 @@ struct EventsReminderWidgetEntryView : View {
     }
 }
 
-struct EventsReminderWidget: Widget {
-    let kind: String = "EventsReminderWidget"
+struct EventsReminderWidget2: Widget {
+    let kind: String = "EventsReminderWidget2"
 
     var body: some WidgetConfiguration {
         IntentConfiguration(
@@ -36,7 +36,7 @@ struct EventsReminderWidget: Widget {
             intent: ConfigurationIntent.self,
             provider: Provider()
         ) { entry in
-            EventsReminderWidgetEntryView(entry: entry)
+            EventsReminderWidgetEntryView2(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
         .configurationDisplayName("My events")
@@ -44,11 +44,4 @@ struct EventsReminderWidget: Widget {
         .supportedFamilies([.systemSmall])
         .contentMarginsDisabled()
     }
-}
-
-// MARK: - Preview
-#Preview(as: .systemSmall) {
-    EventsReminderWidget()
-} timeline: {
-    SimpleEntry(date: .now, configuration: ConfigurationIntent(), event: EventEntity.preview1)
 }

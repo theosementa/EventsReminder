@@ -46,6 +46,19 @@ extension EventRepository {
         }
     }
     
+    func fetchEventWithCustomRequestForDisplayInWidget(eventID: String) -> EventEntity? {
+        let request = EventEntity.fetchRequest()
+        request.predicate = NSPredicate(format: "id == %@", UUID(uuidString: eventID)! as CVarArg)
+        
+        do {
+            let results = try viewContext.fetch(request)
+            return results.first
+        } catch let error as NSError{
+            print("Could not fetch.\(error.userInfo)")
+            return nil
+        }
+    }
+    
     func createEvent(name: String, emoji: String, date: Date, repeatType: Repeat, tag: TagEntity?) {
         let newEvent = EventEntity(context: viewContext)
         newEvent.id = UUID()

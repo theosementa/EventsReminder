@@ -10,6 +10,18 @@
 		D9273D512BF48D9B00554E80 /* EventsReminderWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96F37C02BF4803200C4A837 /* EventsReminderWidget.swift */; };
 		D9273D542BF49DDD00554E80 /* EventsReminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D98AEC732BF103FE005C4AA6 /* EventsReminder.xcdatamodeld */; };
 		D9273D552BF49DF600554E80 /* EventsReminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D98AEC732BF103FE005C4AA6 /* EventsReminder.xcdatamodeld */; };
+		D9273D582BF49EBA00554E80 /* SmallWidget1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D572BF49EBA00554E80 /* SmallWidget1.swift */; };
+		D9273D592BF49F8000554E80 /* SmallWidget1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D572BF49EBA00554E80 /* SmallWidget1.swift */; };
+		D9273D5C2BF4A88600554E80 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9959ABD2BF1121E00232F77 /* Colors.xcassets */; };
+		D9273D5D2BF4A89600554E80 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA46022BF27556003C4C1E /* UIColor.swift */; };
+		D9273D5F2BF4ADEB00554E80 /* SmallWidget2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D5E2BF4ADEB00554E80 /* SmallWidget2.swift */; };
+		D9273D612BF4AE8200554E80 /* SimpleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D602BF4AE8200554E80 /* SimpleEntry.swift */; };
+		D9273D622BF4AE8600554E80 /* SimpleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D602BF4AE8200554E80 /* SimpleEntry.swift */; };
+		D9273D642BF4AEBA00554E80 /* EventsReminderWidget2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D632BF4AEBA00554E80 /* EventsReminderWidget2.swift */; };
+		D9273D662BF4AEE400554E80 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D652BF4AEE400554E80 /* Provider.swift */; };
+		D9273D672BF4AF3000554E80 /* EventsReminderWidget2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D632BF4AEBA00554E80 /* EventsReminderWidget2.swift */; };
+		D9273D682BF4AF3C00554E80 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D652BF4AEE400554E80 /* Provider.swift */; };
+		D9273D692BF4AF4300554E80 /* SmallWidget2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D5E2BF4ADEB00554E80 /* SmallWidget2.swift */; };
 		D96F376C2BF47C9000C4A837 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96F376B2BF47C9000C4A837 /* Intents.framework */; };
 		D96F376F2BF47C9000C4A837 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96F376E2BF47C9000C4A837 /* IntentHandler.swift */; };
 		D96F37842BF47C9000C4A837 /* EventsReminderIntent.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D96F37692BF47C9000C4A837 /* EventsReminderIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -23,7 +35,7 @@
 		D96F37B52BF47FA300C4A837 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AC32BF1149300232F77 /* Date.swift */; };
 		D96F37BB2BF4803200C4A837 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96F37912BF47CD800C4A837 /* WidgetKit.framework */; };
 		D96F37BC2BF4803200C4A837 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96F37932BF47CD800C4A837 /* SwiftUI.framework */; };
-		D96F37BF2BF4803200C4A837 /* EventsReminderWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96F37BE2BF4803200C4A837 /* EventsReminderWidgetBundle.swift */; };
+		D96F37BF2BF4803200C4A837 /* WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96F37BE2BF4803200C4A837 /* WidgetBundle.swift */; };
 		D96F37C12BF4803200C4A837 /* EventsReminderWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96F37C02BF4803200C4A837 /* EventsReminderWidget.swift */; };
 		D96F37C52BF4803300C4A837 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D96F37C42BF4803300C4A837 /* Assets.xcassets */; };
 		D96F37C92BF4803300C4A837 /* EventsReminderWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D96F37BA2BF4803200C4A837 /* EventsReminderWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -112,6 +124,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D9273D572BF49EBA00554E80 /* SmallWidget1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidget1.swift; sourceTree = "<group>"; };
+		D9273D5E2BF4ADEB00554E80 /* SmallWidget2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidget2.swift; sourceTree = "<group>"; };
+		D9273D602BF4AE8200554E80 /* SimpleEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleEntry.swift; sourceTree = "<group>"; };
+		D9273D632BF4AEBA00554E80 /* EventsReminderWidget2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsReminderWidget2.swift; sourceTree = "<group>"; };
+		D9273D652BF4AEE400554E80 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		D96F37692BF47C9000C4A837 /* EventsReminderIntent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EventsReminderIntent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D96F376B2BF47C9000C4A837 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 		D96F376E2BF47C9000C4A837 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
@@ -123,7 +140,7 @@
 		D96F37A42BF47D2200C4A837 /* EventsReminderIntent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EventsReminderIntent.entitlements; sourceTree = "<group>"; };
 		D96F37A52BF47D5A00C4A837 /* WidgetIntents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = WidgetIntents.intentdefinition; sourceTree = "<group>"; };
 		D96F37BA2BF4803200C4A837 /* EventsReminderWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EventsReminderWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		D96F37BE2BF4803200C4A837 /* EventsReminderWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsReminderWidgetBundle.swift; sourceTree = "<group>"; };
+		D96F37BE2BF4803200C4A837 /* WidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetBundle.swift; sourceTree = "<group>"; };
 		D96F37C02BF4803200C4A837 /* EventsReminderWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsReminderWidget.swift; sourceTree = "<group>"; };
 		D96F37C42BF4803300C4A837 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D96F37C62BF4803300C4A837 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -200,6 +217,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D9273D562BF49E8700554E80 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				D9273D572BF49EBA00554E80 /* SmallWidget1.swift */,
+				D9273D5E2BF4ADEB00554E80 /* SmallWidget2.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
 		D96F376A2BF47C9000C4A837 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,8 +250,12 @@
 		D96F37BD2BF4803200C4A837 /* EventsReminderWidget */ = {
 			isa = PBXGroup;
 			children = (
-				D96F37BE2BF4803200C4A837 /* EventsReminderWidgetBundle.swift */,
+				D96F37BE2BF4803200C4A837 /* WidgetBundle.swift */,
+				D9273D602BF4AE8200554E80 /* SimpleEntry.swift */,
+				D9273D652BF4AEE400554E80 /* Provider.swift */,
 				D96F37C02BF4803200C4A837 /* EventsReminderWidget.swift */,
+				D9273D632BF4AEBA00554E80 /* EventsReminderWidget2.swift */,
+				D9273D562BF49E8700554E80 /* Widgets */,
 				D96F37A52BF47D5A00C4A837 /* WidgetIntents.intentdefinition */,
 				D96F37C42BF4803300C4A837 /* Assets.xcassets */,
 				D96F37C62BF4803300C4A837 /* Info.plist */,
@@ -519,6 +549,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D96F37C52BF4803300C4A837 /* Assets.xcassets in Resources */,
+				D9273D5C2BF4A88600554E80 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,14 +588,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				D96F37C12BF4803200C4A837 /* EventsReminderWidget.swift in Sources */,
+				D9273D5D2BF4A89600554E80 /* UIColor.swift in Sources */,
+				D9273D682BF4AF3C00554E80 /* Provider.swift in Sources */,
 				D96F37D62BF484A000C4A837 /* Date.swift in Sources */,
+				D9273D622BF4AE8600554E80 /* SimpleEntry.swift in Sources */,
 				D96F37CD2BF480AB00C4A837 /* WidgetIntents.intentdefinition in Sources */,
 				D96F37D52BF4849D00C4A837 /* RepeatEnum.swift in Sources */,
 				D96F37D32BF481C700C4A837 /* TagRepository.swift in Sources */,
+				D9273D672BF4AF3000554E80 /* EventsReminderWidget2.swift in Sources */,
 				D96F37CF2BF481A600C4A837 /* IntentHandler.swift in Sources */,
 				D96F37D72BF484A600C4A837 /* CoreDataStack.swift in Sources */,
 				D96F37D22BF481C500C4A837 /* Tag.swift in Sources */,
-				D96F37BF2BF4803200C4A837 /* EventsReminderWidgetBundle.swift in Sources */,
+				D9273D692BF4AF4300554E80 /* SmallWidget2.swift in Sources */,
+				D96F37BF2BF4803200C4A837 /* WidgetBundle.swift in Sources */,
+				D9273D592BF49F8000554E80 /* SmallWidget1.swift in Sources */,
 				D96F37D12BF481C100C4A837 /* EventRepository.swift in Sources */,
 				D9273D542BF49DDD00554E80 /* EventsReminder.xcdatamodeld in Sources */,
 				D96F37D02BF481BF00C4A837 /* Event.swift in Sources */,
@@ -575,6 +612,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9273D612BF4AE8200554E80 /* SimpleEntry.swift in Sources */,
 				D9959AC92BF11CF200232F77 /* HomeViewModel.swift in Sources */,
 				D9959AB82BF1103500232F77 /* NavigationStack.swift in Sources */,
 				D9959AC42BF1149300232F77 /* Date.swift in Sources */,
@@ -594,6 +632,7 @@
 				D9DA46012BF26D08003C4C1E /* CreateNewTagViewModel.swift in Sources */,
 				D9DA45FD2BF267C9003C4C1E /* FilterViewModel.swift in Sources */,
 				D9959ABC2BF110E800232F77 /* EventCell.swift in Sources */,
+				D9273D582BF49EBA00554E80 /* SmallWidget1.swift in Sources */,
 				D9959AD82BF129ED00232F77 /* Character.swift in Sources */,
 				D98AEC902BF109A1005C4AA6 /* Tag.swift in Sources */,
 				D9273D512BF48D9B00554E80 /* EventsReminderWidget.swift in Sources */,
@@ -601,16 +640,19 @@
 				D9959ADA2BF12AAC00232F77 /* MeasureSizeModifier.swift in Sources */,
 				D9959ACB2BF11D3C00232F77 /* String.swift in Sources */,
 				D9DA460C2BF2965A003C4C1E /* TimeManager.swift in Sources */,
+				D9273D642BF4AEBA00554E80 /* EventsReminderWidget2.swift in Sources */,
 				D9DA46092BF27AE2003C4C1E /* UIScreen.swift in Sources */,
 				D9DA46032BF27556003C4C1E /* UIColor.swift in Sources */,
 				D9DA45FF2BF26C1A003C4C1E /* CreateNewTagView.swift in Sources */,
 				D9959AAC2BF10C0F00232F77 /* EventRepository.swift in Sources */,
 				D9CD929F2BF3DA8D00929E0F /* EventManager.swift in Sources */,
 				D9DA45FB2BF266F2003C4C1E /* FilterToolbar.swift in Sources */,
+				D9273D5F2BF4ADEB00554E80 /* SmallWidget2.swift in Sources */,
 				D98AEC692BF103FD005C4AA6 /* App.swift in Sources */,
 				D98AEC882BF10753005C4AA6 /* CoreDataStack.swift in Sources */,
 				D9959AD62BF129D800232F77 /* EmojiTextField.swift in Sources */,
 				D96F37A62BF47D5A00C4A837 /* WidgetIntents.intentdefinition in Sources */,
+				D9273D662BF4AEE400554E80 /* Provider.swift in Sources */,
 				D9959AC62BF11A5B00232F77 /* Optionnal.swift in Sources */,
 				D9DA45F92BF266C7003C4C1E /* TagRepository.swift in Sources */,
 				D9959AB72BF1103500232F77 /* NavigationManager.swift in Sources */,
