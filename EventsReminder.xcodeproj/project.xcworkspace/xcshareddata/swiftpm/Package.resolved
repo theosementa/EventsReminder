@@ -1,0 +1,15 @@
+{
+  "originHash" : "d64b538739f4052c43551c655d6b2534a092f26b1dff0ef9c82dc1109cfed56d",
+  "pins" : [
+    {
+      "identity" : "theokit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/theosementa7/TheoKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "7da2ff92c6e2629f2ef4fcbca1de44524f0ee7a0"
+      }
+    }
+  ],
+  "version" : 3
+}

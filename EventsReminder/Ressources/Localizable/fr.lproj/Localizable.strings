@@ -1,0 +1,138 @@
+//MARK: - General Words
+"word_events" = "Evénements";
+
+"word_category" = "Catégorie";
+
+"word_categories" = "Catégories";
+
+"word_date" = "Date";
+
+"word_notifications" = "Notifications";
+
+"word_cancel" = "Annuler";
+
+"word_save" = "Enregistrer";
+
+"word_discard_changes" = "Annuler les changements";
+
+"word_back" = "Retour";
+
+"word_edit" = "Modifier";
+
+"word_delete" = "Supprimer";
+
+"word_days_remaining" = "jours restants";
+
+"word_months" = "mois";
+
+"word_month" = "mois";
+
+"word_days" = "jours";
+
+"word_day" = "jour";
+
+"word_hours" = "heures";
+
+"word_hour" = "heure";
+
+"word_minutes" = "minutes";
+
+"word_minute" = "minute";
+
+"word_none" = "Aucune";
+
+"word_monthly" = "Mensuel";
+
+"word_yearly" = "Annuel";
+
+"word_comingsoon" = "Prochainement";
+
+"word_done" = "Terminé";
+
+"word_repeat" = "Récurrence";
+
+"word_in" = "dans";
+
+"word_today" = "aujourd'hui";
+
+"word_sync" = "Synchronisation";
+
+"word_advanced_filters" = "Filtres avancés";
+
+"word_start" = "Commencer";
+
+"word_settings" = "Réglages";
+
+"word_reportBug" = "Signaler un bug";
+
+"word_suggestFeature" = "Suggérer une fonctionnalité";
+
+//MARK: - OnboardingView
+"onboarding_events" = "Suivez les arrivées des événements qui vous tiennent à coeur.";
+
+"onboarding_filters" = "Des filtres avancés pour trier tous vos événements.";
+
+"onboarding_categories" = "Ajoutez des catégories à vos événements pour les regrouper.";
+
+"onboarding_repeat" = "Donnez des récurrences régulières à vos événements.";
+
+"onboarding_widgets" = "Suivez vos événements depuis votre écran d'accueil ou de verrouillage.";
+
+"onboarding_notifications" = "Ne soyez jamais pris au dépourvu par un événement.";
+
+"onboarding_sync" = "Vos données sont liées à votre compte iCloud.";
+
+//MARK: - HomeView
+"home_search_event" = "Rechercher un événement";
+
+"home_add_first_event" = "Ajoutez votre premier événement en appuyant sur le bouton + en bas à droite de l'écran.";
+
+//MARK: - CreateNewEventView
+"createEvent_name" = "Nom de l'événement";
+
+"createEvent_allday" = "Toute la journée";
+
+"createEvent_notif_oneday" = "1 jour avant";
+
+"createEvent_notif_threedays" = "3 jours avant";
+
+"createEvent_notif_oneweek" = "1 semaine avant";
+
+"createEvent_notif_onemonth" = "1 mois avant";
+
+"createEvent_title_edit" = "Modifier l'événement";
+
+"createEvent_title_new" = "Nouvel événement";
+
+//MARK: - CreateNewTagView
+"createTag_name" = "Nom de la catégorie";
+
+"createTag_title" = "Nouvelle catégorie";
+
+//MARK: - ListOfTagsView
+"listOfTags_title" = "Sélectionner une catégorie";
+
+"listOfTags_add_first_tag" = "Ajoutez votre première catégorie en appuyant sur le bouton + en haut à droite de l'écran.";
+
+"listOfTags_search" = "Rechercher une catégorie";
+
+//MARK: - Filter
+"filter_upcoming_event" = "Evénement à venir";
+
+"filter_alphabetic" = "Alphabétique";
+
+"filter_nearest" = "Le plus proche en premier";
+
+"filter_farthest" = "Le plus loin en premier";
+
+//MARK: - Widget
+"widget_error_get_event" = "Une erreur est survenue lors de la récupération de l'événement.";
+
+"widget_events_empty" = "Créez d'abord un événement dans l'application.";
+
+"widget_failed_to_launch" = "Une erreur est survenue lors du lancement du widget.";
+
+"widget_my_events" = "Mes événements";
+
+"widget_on_home_screen" = "Affichez vos événements sur votre écran d'accueil.";
+

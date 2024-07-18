@@ -1,0 +1,138 @@
+//MARK: - General Words
+"word_events" = "Events";
+
+"word_category" = "Category";
+
+"word_categories" = "Categories";
+
+"word_date" = "Date";
+
+"word_notifications" = "Notifications";
+
+"word_cancel" = "Cancel";
+
+"word_save" = "Save";
+
+"word_discard_changes" = "Discard changes";
+
+"word_back" = "Back";
+
+"word_edit" = "Edit";
+
+"word_delete" = "Delete";
+
+"word_days_remaining" = "days remaining";
+
+"word_months" = "months";
+
+"word_month" = "month";
+
+"word_days" = "days";
+
+"word_day" = "day";
+
+"word_hours" = "hours";
+
+"word_hour" = "hour";
+
+"word_minutes" = "minutes";
+
+"word_minute" = "minute";
+
+"word_none" = "None";
+
+"word_monthly" = "Monthly";
+
+"word_yearly" = "Yearly";
+
+"word_comingsoon" = "Coming soon";
+
+"word_done" = "Done";
+
+"word_repeat" = "Repeat";
+
+"word_in" = "in";
+
+"word_today" = "today";
+
+"word_sync" = "Synchronisation";
+
+"word_advanced_filters" = "Advanced filters";
+
+"word_start" = "Start";
+
+"word_settings" = "Settings";
+
+"word_reportBug" = "Report a bug";
+
+"word_suggestFeature" = "Suggest a feature";
+
+//MARK: - OnboardingView
+"onboarding_events" = "Follow the arrivals of events that are close to your heart.";
+
+"onboarding_filters" = "Advanced filters to sort all your events.";
+
+"onboarding_categories" = "Add categories to your events to group them.";
+
+"onboarding_repeat" = "Give regular recurrences to your events.";
+
+"onboarding_widgets" = "Follow your events from your home screen or lock screen.";
+
+"onboarding_notifications" = "Never be caught off guard by an event.";
+
+"onboarding_sync" = "Your data is linked to your iCloud account.";
+
+//MARK: - HomeView
+"home_search_event" = "Search for an event";
+
+"home_add_first_event" = "Add your first event by pressing the + button at the bottom right of the screen.";
+
+//MARK: - CreateNewEventView
+"createEvent_name" = "Event name";
+
+"createEvent_allday" = "All day long";
+
+"createEvent_notif_oneday" = "1 day before";
+
+"createEvent_notif_threedays" = "3 days before";
+
+"createEvent_notif_oneweek" = "1 week before";
+
+"createEvent_notif_onemonth" = "1 month before";
+
+"createEvent_title_edit" = "Update event";
+
+"createEvent_title_new" = "New event";
+
+//MARK: - CreateNewTagView
+"createTag_name" = "Category name";
+
+"createTag_title" = "New category";
+
+//MARK: - ListOfTagsView
+"listOfTags_title" = "Select a category";
+
+"listOfTags_add_first_tag" = "Add your first category by pressing the + button at the top right of the screen.";
+
+"listOfTags_search" = "Search for a category";
+
+//MARK: - Filter
+"filter_upcoming_event" = "Upcoming event";
+
+"filter_alphabetic" = "Alphabetic";
+
+"filter_nearest" = "Nearest first";
+
+"filter_farthest" = "Farthest first";
+
+//MARK: - Widget
+"widget_error_get_event" = "An error occurred while retrieving the event.";
+
+"widget_events_empty" = "First create an event in the application.";
+
+"widget_failed_to_launch" = "An error occurred when launching the widget.";
+
+"widget_my_events" = "My events";
+
+"widget_on_home_screen" = "View your events on your home screen.";
+
