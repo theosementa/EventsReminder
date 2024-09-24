@@ -10,15 +10,13 @@ import Foundation
 @Observable
 final class CreateNewEventViewModel {
     
-    var emoji: String
     var name: String
     var tag: TagEntity?
     var date: Date
     var repeatType: Repeat
     var event: EventEntity?
     
-    init(emoji: String = "🎂", name: String = "", tag: TagEntity? = nil, date: Date = .now, repeatType: Repeat = .none, event: EventEntity? = nil) {
-        self.emoji = emoji
+    init(name: String = "", tag: TagEntity? = nil, date: Date = .now, repeatType: Repeat = .none, event: EventEntity? = nil) {
         self.name = name
         self.tag = tag
         self.date = date
@@ -39,7 +37,6 @@ extension CreateNewEventViewModel {
         if canEventBeCreated() {
             EventRepository.shared.createEvent(
                 name: name,
-                emoji: emoji,
                 date: allDay ? date.dateAtMidnight() : date,
                 repeatType: repeatType,
                 tag: tag
@@ -52,7 +49,6 @@ extension CreateNewEventViewModel {
             EventRepository.shared.updateEvent(
                 event: event,
                 name: name,
-                emoji: emoji,
                 date: allDay ? date.dateAtMidnight() : date,
                 repeatType: repeatType,
                 tag: tag
@@ -61,7 +57,6 @@ extension CreateNewEventViewModel {
     }
     
     func resetData() {
-        self.emoji = "🎂"
         self.name = ""
         self.tag = nil
         self.date = .now
@@ -78,7 +73,7 @@ extension CreateNewEventViewModel {
 extension CreateNewEventViewModel {
     
     func canEventBeCreated() -> Bool {
-        if !emoji.isEmpty && !name.isEmptyWithoutSpace() {
+        if !name.isEmptyWithoutSpace() {
             return true
         } else {
             return false
@@ -86,7 +81,7 @@ extension CreateNewEventViewModel {
     }
     
     func isEventInCreation() -> Bool {
-        if !emoji.isEmpty || !name.isEmptyWithoutSpace() || !tag.isNil() || repeatType != .none {
+        if !name.isEmptyWithoutSpace() || !tag.isNil() || repeatType != .none {
             return true
         } else { return false }
     }

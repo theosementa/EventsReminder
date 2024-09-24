@@ -46,7 +46,10 @@ struct HomeView: View {
                     } else {
                         ForEach(viewModel.searchResults) { event in
                             Button(action: {
-                                router.pushEventDetail(event: event)
+                                withAnimation(.smooth) {
+                                    viewModel.selectedEvent = event
+                                    viewModel.showEventDetails.toggle()
+                                }
                             }, label: {
                                 EventRow(event: event)
                             })
@@ -73,6 +76,11 @@ struct HomeView: View {
                     }
                 }
             .padding()
+        }
+        .semiCustomSheet(isPresented: $viewModel.showEventDetails, withDismissButton: false) {
+            if let event = viewModel.selectedEvent {
+                EventDetailView(router: router, event: event)
+            }
         }
         .navigationTitle("word_events".localized)
         .searchable(text: $viewModel.searchText, prompt: "home_search_event".localized)

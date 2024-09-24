@@ -18,7 +18,6 @@ public class EventEntity: NSManagedObject, Identifiable {
 
     @NSManaged public var id: UUID
     @NSManaged public var name: String
-    @NSManaged public var emoji: String
     @NSManaged private var dateEvent: Date?
     @NSManaged private var repeatEnum: Int16
     @NSManaged public var tag: TagEntity?
@@ -85,7 +84,6 @@ extension EventEntity {
         let preview = EventEntity(context: CoreDataStack.shared.viewContext)
         preview.id = UUID()
         preview.name = "Preview 1"
-        preview.emoji = "🎂"
         preview.dateEvent = Calendar.current.date(byAdding: .day, value: 10, to: .now) ?? .now
         preview.repeatType = .yearly
         

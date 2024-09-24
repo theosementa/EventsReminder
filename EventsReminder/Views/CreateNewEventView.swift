@@ -25,16 +25,10 @@ struct CreateNewEventView: View {
             ScrollView {
                 VStack(spacing: 40) {
                     VStack(spacing: 16) {
-                        HStack(spacing: 16) {
-                            EmojiTextField(text: $viewModel.emoji)
-                                .frame(width: 24, height: 24)
-                                .backgroundComponent(isInSheet: true)
-                            
-                            TextField("createEvent_name".localized, text: $viewModel.name)
-                                .fontWeight(.medium)
-                                .frame(maxWidth: .infinity)
-                                .backgroundComponent(isInSheet: true)
-                        }
+                        TextField("createEvent_name".localized, text: $viewModel.name)
+                            .fontWeight(.medium)
+                            .frame(maxWidth: .infinity)
+                            .backgroundComponent(isInSheet: true)
                         
                         NavigationLink {
                             ListOfTagsView(tag: $viewModel.tag)

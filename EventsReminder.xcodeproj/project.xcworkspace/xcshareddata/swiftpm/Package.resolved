@@ -1,13 +1,22 @@
 {
-  "originHash" : "d64b538739f4052c43551c655d6b2534a092f26b1dff0ef9c82dc1109cfed56d",
+  "originHash" : "2fe5637ca34aa58d9a5628db7c72741b5b26f095795ecd5b8f32d2c54d765796",
   "pins" : [
+    {
+      "identity" : "mcemojipicker",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/izyumkin/MCEmojiPicker",
+      "state" : {
+        "revision" : "e0b4903b75ae1cc418d276d84d1cb946b8a1d73c",
+        "version" : "1.2.3"
+      }
+    },
     {
       "identity" : "theokit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/theosementa7/TheoKit",
       "state" : {
         "branch" : "main",
-        "revision" : "7da2ff92c6e2629f2ef4fcbca1de44524f0ee7a0"
+        "revision" : "3af1b3c2aa8376d44c95b1254893f7afaed70214"
       }
     }
   ],

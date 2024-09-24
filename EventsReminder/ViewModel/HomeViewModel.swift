@@ -13,7 +13,8 @@ final class HomeViewModel {
     var filterViewModel: FilterViewModel = .shared
     
     var searchText: String = ""
-    
+    var selectedEvent: EventEntity?
+    var showEventDetails: Bool = false
 }
 
 extension HomeViewModel {

@@ -15,10 +15,12 @@ struct EventRow: View {
     // MARK: -
     var body: some View {
         HStack(spacing: 12) {
-            Text(event.emoji)
-                .font(.system(size: 24, weight: .bold))
-                .frame(width: 28, height: 28)
-                .backgroundComponent(radius: 12, isInSheet: true)
+            if let tag = event.tag {
+                Text(tag.emoji)
+                    .font(.system(size: 24, weight: .bold))
+                    .frame(width: 28, height: 28)
+                    .backgroundComponent(radius: 12, isInSheet: true)
+            }
             
             VStack(alignment: .leading, spacing: 2) {
                 Text(event.name)

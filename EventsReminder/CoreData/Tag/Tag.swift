@@ -19,6 +19,7 @@ public class TagEntity: NSManagedObject, Identifiable {
 
     @NSManaged public var id: UUID
     @NSManaged public var name: String
+    @NSManaged public var emoji: String
     @NSManaged private var colorData: Data
     @NSManaged public var events: Set<EventEntity>?
     
@@ -50,6 +51,7 @@ extension TagEntity {
         let preview = TagEntity(context: CoreDataStack.shared.viewContext)
         preview.id = UUID()
         preview.name = "Prev TAG 1"
+        preview.emoji = "🚀"
         preview.color = .blue
         
         return preview

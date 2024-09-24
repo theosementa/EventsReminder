@@ -71,11 +71,10 @@ extension EventRepository {
         }
     }
     
-    func createEvent(name: String, emoji: String, date: Date, repeatType: Repeat, tag: TagEntity?) {
+    func createEvent(name: String, date: Date, repeatType: Repeat, tag: TagEntity?) {
         let newEvent = EventEntity(context: viewContext)
         newEvent.id = UUID()
         newEvent.name = name
-        newEvent.emoji = emoji
         newEvent.date = date
         newEvent.repeatType = repeatType
         newEvent.tag = tag
@@ -93,9 +92,8 @@ extension EventRepository {
         WidgetCenter.shared.reloadAllTimelines()
     }
     
-    func updateEvent(event: EventEntity, name: String, emoji: String, date: Date, repeatType: Repeat, tag: TagEntity?) {
+    func updateEvent(event: EventEntity, name: String, date: Date, repeatType: Repeat, tag: TagEntity?) {
         event.name = name
-        event.emoji = emoji
         event.date = date
         event.repeatType = repeatType
         event.tag = tag
