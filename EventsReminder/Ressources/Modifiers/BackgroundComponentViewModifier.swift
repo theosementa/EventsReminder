@@ -12,7 +12,7 @@ struct BackgroundComponentViewModifier: ViewModifier {
     
     var radius: CGFloat?
     var isInSheet: Bool?
-    var isPaddingEnabled: Bool?
+    var padding: CGFloat?
     
     var containerColor: Color?
     var strokeColor: Color?
@@ -20,13 +20,13 @@ struct BackgroundComponentViewModifier: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .padding((isPaddingEnabled ?? true) ? 12 : 0)
+            .padding(padding != nil ? padding! : 12)
             .background {
                 ZStack {
-                    RoundedRectangle(cornerRadius: radius ?? 12, style: .continuous)
+                    RoundedRectangle(cornerRadius: radius ?? 20, style: .continuous)
                         .fill(containerColor ?? ((isInSheet ?? false) ? Color.Apple.backgroundComponentSheet : Color.Apple.backgroundComponent))
                     
-                    RoundedRectangle(cornerRadius: radius ?? 12, style: .continuous)
+                    RoundedRectangle(cornerRadius: radius ?? 20, style: .continuous)
                         .stroke(lineWidth: strokeLineWidth ?? 2)
                         .fill(strokeColor ?? Color.Apple.componentInComponent)
                 }
@@ -39,7 +39,7 @@ extension View {
     func backgroundComponent(
         radius: CGFloat? = nil,
         isInSheet: Bool? = nil,
-        isPaddingEnabled: Bool? = nil,
+        padding: CGFloat? = 12,
         containerColor: Color? = nil,
         strokeColor: Color? = nil,
         strokeLineWidth: CGFloat? = nil
@@ -48,7 +48,7 @@ extension View {
             BackgroundComponentViewModifier(
                 radius: radius,
                 isInSheet: isInSheet,
-                isPaddingEnabled: isPaddingEnabled,
+                padding: padding,
                 containerColor: containerColor,
                 strokeColor: strokeColor,
                 strokeLineWidth: strokeLineWidth

@@ -1,5 +1,5 @@
 //
-//  EventCell.swift
+//  EventRow.swift
 //  EventsReminder
 //
 //  Created by KaayZenn on 12/05/2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EventCell: View {
+struct EventRow: View {
     
     // Builder
     @ObservedObject var event: EventEntity
@@ -18,7 +18,7 @@ struct EventCell: View {
             Text(event.emoji)
                 .font(.system(size: 24, weight: .bold))
                 .frame(width: 28, height: 28)
-                .backgroundComponent(isInSheet: true)
+                .backgroundComponent(radius: 12, isInSheet: true)
             
             VStack(alignment: .leading, spacing: 2) {
                 Text(event.name)
@@ -37,22 +37,23 @@ struct EventCell: View {
                 .frame(minWidth: 28)
                 .frame(height: 28)
                 .backgroundComponent(
+                    radius: 12,
                     containerColor: event.tag?.color.toColor().opacity(0.3) ?? nil,
                     strokeColor: event.tag?.color.toColor() ?? nil
                 )
         }
-        .backgroundComponent()
+        .backgroundComponent(padding: 8)
     } // End body
 } // End struct
 
 // MARK: - Preview
 #Preview("Dark mode", traits: .sizeThatFitsLayout) {
-    EventCell(event: .preview1)
+    EventRow(event: .preview1)
         .preferredColorScheme(.dark)
         .padding()
 }
 
 #Preview("Light mode", traits: .sizeThatFitsLayout) {
-    EventCell(event: .preview1)
+    EventRow(event: .preview1)
         .padding()
 }

@@ -17,7 +17,7 @@ struct EventsReminderApp: App {
     private let router = NavigationManager(isPresented: .constant(.home))
     
     // Repository
-    private let eventRepository = EventRepository.shared
+    private let eventRepository: EventRepository = .shared
     private let tagRepository = TagRepository.shared
     
     // MARK: -
@@ -27,6 +27,8 @@ struct EventsReminderApp: App {
                 HomeView(router: router)
             }
             .environment(\.managedObjectContext, coreDataStack.viewContext)
+            .environment(eventRepository)
+            .environment(tagRepository)
             .task {
                 await eventRepository.fetchEvents()
                 EventManager.shared.updatePastEventsToNextValidDate()

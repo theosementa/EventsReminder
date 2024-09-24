@@ -74,7 +74,7 @@
 		D9959AB72BF1103500232F77 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AB22BF1103500232F77 /* NavigationManager.swift */; };
 		D9959AB82BF1103500232F77 /* NavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AB32BF1103500232F77 /* NavigationStack.swift */; };
 		D9959AB92BF1103500232F77 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AB42BF1103500232F77 /* Router.swift */; };
-		D9959ABC2BF110E800232F77 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959ABB2BF110E800232F77 /* EventCell.swift */; };
+		D9959ABC2BF110E800232F77 /* EventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959ABB2BF110E800232F77 /* EventRow.swift */; };
 		D9959AC12BF1125E00232F77 /* BackgroundComponentViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AC02BF1125E00232F77 /* BackgroundComponentViewModifier.swift */; };
 		D9959AC42BF1149300232F77 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AC32BF1149300232F77 /* Date.swift */; };
 		D9959AC92BF11CF200232F77 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9959AC82BF11CF200232F77 /* HomeViewModel.swift */; };
@@ -108,6 +108,8 @@
 		D9EE234A2C04A70B003A24AD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EE23492C04A70B003A24AD /* SettingsView.swift */; };
 		D9EE234C2C04C07E003A24AD /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EE234B2C04C07E003A24AD /* URLManager.swift */; };
 		D9EE234E2C04C892003A24AD /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EE234D2C04C892003A24AD /* SettingsViewModel.swift */; };
+		D9FBA15B2CA2EBB900DDD2BB /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FBA15A2CA2EBB900DDD2BB /* Word.swift */; };
+		D9FBA15C2CA2EBB900DDD2BB /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FBA15A2CA2EBB900DDD2BB /* Word.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -188,7 +190,7 @@
 		D9959AB22BF1103500232F77 /* NavigationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		D9959AB32BF1103500232F77 /* NavigationStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationStack.swift; sourceTree = "<group>"; };
 		D9959AB42BF1103500232F77 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		D9959ABB2BF110E800232F77 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		D9959ABB2BF110E800232F77 /* EventRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRow.swift; sourceTree = "<group>"; };
 		D9959AC02BF1125E00232F77 /* BackgroundComponentViewModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundComponentViewModifier.swift; sourceTree = "<group>"; };
 		D9959AC32BF1149300232F77 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		D9959AC82BF11CF200232F77 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 		D9EE23492C04A70B003A24AD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D9EE234B2C04C07E003A24AD /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
 		D9EE234D2C04C892003A24AD /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		D9FBA15A2CA2EBB900DDD2BB /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +294,7 @@
 		D9273D792BF4E94400554E80 /* Localizable */ = {
 			isa = PBXGroup;
 			children = (
+				D9FBA15A2CA2EBB900DDD2BB /* Word.swift */,
 				D9273D7A2BF4E95700554E80 /* Localizable.strings */,
 			);
 			path = Localizable;
@@ -394,6 +398,7 @@
 		D98AEC852BF106F2005C4AA6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D9FBA1592CA2EB9000DDD2BB /* Onboarding */,
 				D9EE23482C04A6FF003A24AD /* Settings */,
 				D9959AA92BF10AE900232F77 /* HomeView.swift */,
 				D9959ACC2BF11F0B00232F77 /* CreateNewEventView.swift */,
@@ -401,7 +406,6 @@
 				D9DA46062BF2783D003C4C1E /* EventDetailView.swift */,
 				D9DA46042BF276DB003C4C1E /* ListOfTagsView.swift */,
 				D9273D842BF50B6000554E80 /* ListOfEventsByTagsView.swift */,
-				D955F7842BFB2F190007871F /* OnboardingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -450,7 +454,7 @@
 		D9959ABA2BF110C600232F77 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				D9959ABB2BF110E800232F77 /* EventCell.swift */,
+				D9959ABB2BF110E800232F77 /* EventRow.swift */,
 				D9DA45FA2BF266F2003C4C1E /* FilterToolbar.swift */,
 				D9DA460D2BF29688003C4C1E /* TimeCell.swift */,
 				D9273D862BF51BF500554E80 /* TagCell.swift */,
@@ -513,6 +517,14 @@
 				D9EE23492C04A70B003A24AD /* SettingsView.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		D9FBA1592CA2EB9000DDD2BB /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				D955F7842BFB2F190007871F /* OnboardingView.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -693,6 +705,7 @@
 				D9273D672BF4AF3000554E80 /* EventsReminderWidget2.swift in Sources */,
 				D9C414C52BF5E4A40000F911 /* NotificationManager.swift in Sources */,
 				D96F37CF2BF481A600C4A837 /* IntentHandler.swift in Sources */,
+				D9FBA15B2CA2EBB900DDD2BB /* Word.swift in Sources */,
 				D96F37D72BF484A600C4A837 /* CoreDataStack.swift in Sources */,
 				D96F37D22BF481C500C4A837 /* Tag.swift in Sources */,
 				D9C414C92BF5F9850000F911 /* Preferences.swift in Sources */,
@@ -735,7 +748,7 @@
 				D9DA46012BF26D08003C4C1E /* CreateNewTagViewModel.swift in Sources */,
 				D9273D772BF4C28100554E80 /* MediumWidget1.swift in Sources */,
 				D9DA45FD2BF267C9003C4C1E /* FilterViewModel.swift in Sources */,
-				D9959ABC2BF110E800232F77 /* EventCell.swift in Sources */,
+				D9959ABC2BF110E800232F77 /* EventRow.swift in Sources */,
 				D9273D582BF49EBA00554E80 /* SmallWidget1.swift in Sources */,
 				D9959AD82BF129ED00232F77 /* Character.swift in Sources */,
 				D98AEC902BF109A1005C4AA6 /* Tag.swift in Sources */,
@@ -750,6 +763,7 @@
 				D9EE234E2C04C892003A24AD /* SettingsViewModel.swift in Sources */,
 				D9959AAC2BF10C0F00232F77 /* EventRepository.swift in Sources */,
 				D9C414C82BF5F9850000F911 /* Preferences.swift in Sources */,
+				D9FBA15C2CA2EBB900DDD2BB /* Word.swift in Sources */,
 				D955F7852BFB2F190007871F /* OnboardingView.swift in Sources */,
 				D9CD929F2BF3DA8D00929E0F /* EventManager.swift in Sources */,
 				D9DA45FB2BF266F2003C4C1E /* FilterToolbar.swift in Sources */,

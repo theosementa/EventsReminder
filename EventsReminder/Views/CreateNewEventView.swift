@@ -69,13 +69,13 @@ struct CreateNewEventView: View {
                         VStack(spacing: 16) {
                             DatePicker("", selection: $viewModel.date, displayedComponents: viewModel.allDay ? .date : [.hourAndMinute, .date])
                                 .padding(8)
-                                .backgroundComponent(isInSheet: true, isPaddingEnabled: false)
+                                .backgroundComponent(isInSheet: true, padding: 0)
                             
                             Toggle(isOn: $viewModel.allDay, label: {
                                 Text("createEvent_allday".localized)
                             })
                             .padding(10)
-                            .backgroundComponent(isInSheet: true, isPaddingEnabled: false)
+                            .backgroundComponent(isInSheet: true, padding: 0)
                             
                             HStack {
                                 Text("word_repeat".localized)
@@ -89,7 +89,7 @@ struct CreateNewEventView: View {
                                 }
                             }
                             .padding(10)
-                            .backgroundComponent(isInSheet: true, isPaddingEnabled: false)
+                            .backgroundComponent(isInSheet: true, padding: 0)
                         }
                         .fontWeight(.medium)
                     }

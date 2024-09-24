@@ -13,7 +13,7 @@ struct ListOfEventsByTagsView: View {
     var router: NavigationManager
     
     // Repository
-    @State private var eventRepository: EventRepository = .shared
+    @Environment(EventRepository.self) private var eventRepository
     
     // Custom
     @State private var filterViewModel: FilterViewModel = .shared
@@ -33,7 +33,7 @@ struct ListOfEventsByTagsView: View {
                 .padding(.top, 4)
                 VStack(spacing: 4) {
                     ForEach(eventRepository.eventsByTags(events: events)[tag] ?? []) { event in
-                        EventCell(event: event)
+                        EventRow(event: event)
                             .onTapGesture {
                                 router.pushEventDetail(event: event)
                             }

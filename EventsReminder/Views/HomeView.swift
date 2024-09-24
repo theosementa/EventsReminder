@@ -14,8 +14,8 @@ struct HomeView: View {
     var router: NavigationManager
     
     // Repository
-    @State private var eventRepository = EventRepository.shared
-    @State private var tagRepository = TagRepository.shared
+    @Environment(EventRepository.self) private var eventRepository
+    @Environment(TagRepository.self) private var tagRepository
     
     // Custom
     @State private var viewModel = HomeViewModel()
@@ -48,23 +48,17 @@ struct HomeView: View {
                             Button(action: {
                                 router.pushEventDetail(event: event)
                             }, label: {
-                                EventCell(event: event)
+                                EventRow(event: event)
                             })
                             .listRowSeparator(.hidden)
                             .listRowInsets(.init(top: 6, leading: 16, bottom: 6, trailing: 16))
                             .listRowBackground(Color.Apple.background.edgesIgnoringSafeArea(.all))
                         }
                     }
-                    
-                    Rectangle()
-                        .frame(height: 50)
-                        .foregroundStyle(Color.clear)
-                        .listRowSeparator(.hidden)
-                        .listRowInsets(.init(top: 6, leading: 16, bottom: 6, trailing: 16))
-                        .listRowBackground(Color.Apple.background.edgesIgnoringSafeArea(.all))
                 }
                 .listStyle(.plain)
                 .scrollIndicators(.hidden)
+                .contentMargins(.bottom, 100, for: .scrollContent)
                 .animation(.smooth, value: viewModel.searchResults)
             }
         }

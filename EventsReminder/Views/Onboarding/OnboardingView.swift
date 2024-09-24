@@ -22,49 +22,49 @@ struct OnboardingView: View {
                 onboardingCell(
                     icon: "clock.fill",
                     title: "word_events".localized,
-                    desc: "onboarding_events".localized,
+                    desc: Word.Onboarding.events,
                     color: .red
                 )
                 
                 onboardingCell(
                     icon: "slider.horizontal.3",
                     title: "word_advanced_filters".localized,
-                    desc: "onboarding_filters".localized,
+                    desc: Word.Onboarding.filters,
                     color: .orange
                 )
                 
                 onboardingCell(
                     icon: "tag.fill",
                     title: "word_categories".localized,
-                    desc: "onboarding_categories".localized,
+                    desc: Word.Onboarding.categories,
                     color: .green
                 )
                 
                 onboardingCell(
                     icon: "clock.arrow.2.circlepath",
                     title: "word_repeat".localized,
-                    desc: "onboarding_repeat".localized,
+                    desc: Word.Onboarding.repeatWord,
                     color: .blue
                 )
                 
                 onboardingCell(
                     icon: "square.grid.2x2",
                     title: "Widgets",
-                    desc: "onboarding_widgets".localized,
+                    desc: Word.Onboarding.widgets,
                     color: .purple
                 )
                 
                 onboardingCell(
                     icon: "bell.badge.fill",
                     title: "word_notifications".localized,
-                    desc: "onboarding_notifications".localized,
+                    desc: Word.Onboarding.notifications,
                     color: .red
                 )
                             
                 onboardingCell(
                     icon: "icloud.fill",
                     title: "word_sync".localized,
-                    desc: "onboarding_sync".localized,
+                    desc: Word.Onboarding.sync,
                     color: .blue
                 )
             }
