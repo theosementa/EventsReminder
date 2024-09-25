@@ -10,14 +10,15 @@ import TheoKit
 
 struct CreateNewEventView: View {
     
-    // Builder
-    @Binding var viewModel: CreateNewEventViewModel
-    
-    // Repository
-    @State private var tagRepository = TagRepository.shared
+    @StateObject private var viewModel: CreateNewEventViewModel
     
     // Environment
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject private var tagRepository: TagRepository
+    
+    init(event: EventEntity? = nil) {
+        self._viewModel = StateObject(wrappedValue: CreateNewEventViewModel(event: event))
+    }
     
     // MARK: -
     var body: some View {
@@ -38,11 +39,12 @@ struct CreateNewEventView: View {
                                     .fontWeight(.medium)
                                 Spacer()
                                 if let tag = viewModel.tag {
-                                    Text(tag.name)
+                                    Text(tag.emoji + " " + tag.name)
                                         .foregroundStyle(tag.color.toColor())
+                                        .fontWeight(.medium)
                                         .padding(6)
                                         .background {
-                                            RoundedRectangle(cornerRadius: 6, style: .continuous)
+                                            RoundedRectangle(cornerRadius: 8, style: .continuous)
                                                 .fill(tag.color.toColor().opacity(0.3))
                                         }
                                 }
@@ -130,7 +132,7 @@ struct CreateNewEventView: View {
 #Preview {
     Text("HEHO")
         .sheet(isPresented: .constant(true)) {
-            CreateNewEventView(viewModel: .constant(.init()))
+            CreateNewEventView()
             .preferredColorScheme(.dark)
     }
 }

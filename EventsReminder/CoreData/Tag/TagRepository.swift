@@ -30,9 +30,10 @@ extension TagRepository {
         }
     }
     
-    func createTag(name: String, color: UIColor) {
+    func createTag(emoji: String, name: String, color: UIColor) {
         let newTag = TagEntity(context: viewContext)
         newTag.id = UUID()
+        newTag.emoji = emoji
         newTag.name = name
         newTag.color = color
         

@@ -74,14 +74,7 @@ struct EventDetailView: View {
         .overlay(alignment: .topTrailing) {
             Menu {
                 Button(action: {
-                    self.createNewEventViewModel = CreateNewEventViewModel(
-                        name: event.name,
-                        tag: event.tag,
-                        date: event.date,
-                        repeatType: event.repeatType,
-                        event: event
-                    )
-                    router.presentCreateNewEvent(viewModel: $createNewEventViewModel) {
+                    router.presentCreateNewEvent(event: event) {
                         createNewEventViewModel.resetData()
                     }
                 }, label: {

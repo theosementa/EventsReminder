@@ -27,8 +27,8 @@ class NavigationManager: Router {
         presentSheet(.onboarding, dismissAction)
     }
     
-    func presentCreateNewEvent(viewModel: Binding<CreateNewEventViewModel>, dismissAction: (() -> Void)? = nil) {
-        presentSheet(.createNewEvent(viewModel: viewModel), dismissAction)
+    func presentCreateNewEvent(event: EventEntity? = nil, dismissAction: (() -> Void)? = nil) {
+        presentSheet(.createNewEvent(event: event), dismissAction)
     }
     
 
@@ -50,8 +50,8 @@ private extension NavigationManager {
                 HomeView(router: router(route: route))
             case .settings:
                 SettingsView()
-            case .createNewEvent(let viewModel):
-                CreateNewEventView(viewModel: viewModel)
+            case .createNewEvent(let event):
+                CreateNewEventView(event: event)
             case .eventDetail(let event):
                 EventDetailView(router: router(route: route), event: event)
             }

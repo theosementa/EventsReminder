@@ -11,7 +11,10 @@ import SwiftUI
 final class CreateNewTagViewModel: ObservableObject {
     
     @Published var color: Color = .blue
+    @Published var emoji: String = "🎂"
     @Published var name: String = ""
+    
+    @Published var showEmojiPicker: Bool = false
     
 }
 
@@ -20,6 +23,7 @@ extension CreateNewTagViewModel {
     func createNewTag() {
         if canTagBeCreated() {
             TagRepository.shared.createTag(
+                emoji: emoji,
                 name: name,
                 color: UIColor(color)
             )
@@ -29,7 +33,7 @@ extension CreateNewTagViewModel {
     }
 
     func canTagBeCreated() -> Bool {
-        if !name.isEmpty {
+        if !name.isEmpty && !emoji.isEmpty {
             return true
         } else {
             return false

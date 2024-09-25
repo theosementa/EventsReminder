@@ -21,7 +21,7 @@ struct TagCell: View {
         Button {
             action()
         } label: {
-            Text(tag.name)
+            Text(tag.emoji + " " + tag.name)
                 .foregroundStyle(tag.color.toColor())
                 .fontWeight(.semibold)
                 .padding(4)

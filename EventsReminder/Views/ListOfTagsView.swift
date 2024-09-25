@@ -12,11 +12,9 @@ struct ListOfTagsView: View {
     // Builder
     @Binding var tag: TagEntity?
     
-    // Custom
-    @State private var tagRepository = TagRepository.shared
-    
     // Environment
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject private var tagRepository: TagRepository
     
     // String variables
     @State private var searchText: String = ""

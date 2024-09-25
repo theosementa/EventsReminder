@@ -18,8 +18,7 @@ struct HomeView: View {
     @EnvironmentObject private var tagRepository: TagRepository
     
     // Custom
-    @State private var viewModel = HomeViewModel()
-    @State private var createNewEventViewModel = CreateNewEventViewModel()
+    @StateObject private var viewModel = HomeViewModel()
     
     // Preference
     @Preference(\.isFirstLaunch) private var isFirstLaunch
@@ -71,9 +70,7 @@ struct HomeView: View {
             AddButton(
                 foregroundColor: Color.white,
                 backgroundColor: Color.blue) {
-                    router.presentCreateNewEvent(viewModel: $createNewEventViewModel) {
-                        createNewEventViewModel.resetData()
-                    }
+                    router.presentCreateNewEvent()
                 }
             .padding()
         }

@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import MCEmojiPicker
 
 struct CreateNewTagView: View {
     
     // Custom
-    @State private var viewModel = CreateNewTagViewModel()
+    @StateObject private var viewModel = CreateNewTagViewModel()
     
     // Environment
     @Environment(\.dismiss) private var dismiss
@@ -19,7 +20,18 @@ struct CreateNewTagView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                HStack(spacing: 16) {
+                HStack(spacing: 10) {
+                    Button(action: { viewModel.showEmojiPicker.toggle() }, label: {
+                        Text(viewModel.emoji)
+                            .font(.system(size: 24))
+                            .frame(width: 24, height: 24)
+                            .backgroundComponent(isInSheet: true)
+                    })
+                    .emojiPicker(
+                        isPresented: $viewModel.showEmojiPicker,
+                        selectedEmoji: $viewModel.emoji
+                    )
+                    
                     ColorPicker("", selection: $viewModel.color)
                         .frame(width: 24, height: 24)
                         .labelsHidden()
@@ -64,7 +76,6 @@ struct CreateNewTagView: View {
     Text("HEHO")
         .sheet(isPresented: .constant(true)) {
             CreateNewTagView()
-                .presentationDetents([.medium])
                 .preferredColorScheme(.dark)
     }
 }

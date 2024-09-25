@@ -9,18 +9,20 @@ import Foundation
 
 final class CreateNewEventViewModel: ObservableObject {
     
-    @Published var name: String
-    @Published var tag: TagEntity?
-    @Published var date: Date
-    @Published var repeatType: Repeat
-    @Published var event: EventEntity?
+    @Published var name: String = ""
+    @Published var tag: TagEntity? = nil
+    @Published var date: Date = .now
+    @Published var repeatType: Repeat = .none
+    @Published var event: EventEntity? = nil
     
-    init(name: String = "", tag: TagEntity? = nil, date: Date = .now, repeatType: Repeat = .none, event: EventEntity? = nil) {
-        self.name = name
-        self.tag = tag
-        self.date = date
-        self.repeatType = repeatType
-        self.event = event
+    init(event: EventEntity? = nil) {
+        if let event {
+            self.name = event.name
+            self.tag = event.tag
+            self.date = event.date
+            self.repeatType = event.repeatType
+            self.event = event
+        }
     }
     
     @Published var allDay: Bool = true

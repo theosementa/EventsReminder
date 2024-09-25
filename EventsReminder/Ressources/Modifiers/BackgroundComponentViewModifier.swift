@@ -23,10 +23,10 @@ struct BackgroundComponentViewModifier: ViewModifier {
             .padding(padding != nil ? padding! : 12)
             .background {
                 ZStack {
-                    RoundedRectangle(cornerRadius: radius ?? 20, style: .continuous)
+                    RoundedRectangle(cornerRadius: radius ?? 16, style: .continuous)
                         .fill(containerColor ?? ((isInSheet ?? false) ? Color.Apple.backgroundComponentSheet : Color.Apple.backgroundComponent))
                     
-                    RoundedRectangle(cornerRadius: radius ?? 20, style: .continuous)
+                    RoundedRectangle(cornerRadius: radius ?? 16, style: .continuous)
                         .stroke(lineWidth: strokeLineWidth ?? 2)
                         .fill(strokeColor ?? Color.Apple.componentInComponent)
                 }
