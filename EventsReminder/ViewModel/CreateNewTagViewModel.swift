@@ -8,11 +8,10 @@
 import Foundation
 import SwiftUI
 
-@Observable
-final class CreateNewTagViewModel {
+final class CreateNewTagViewModel: ObservableObject {
     
-    var color: Color = .blue
-    var name: String = ""
+    @Published var color: Color = .blue
+    @Published var name: String = ""
     
 }
 

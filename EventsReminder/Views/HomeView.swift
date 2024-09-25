@@ -14,8 +14,8 @@ struct HomeView: View {
     var router: NavigationManager
     
     // Repository
-    @Environment(EventRepository.self) private var eventRepository
-    @Environment(TagRepository.self) private var tagRepository
+    @EnvironmentObject private var eventRepository: EventRepository
+    @EnvironmentObject private var tagRepository: TagRepository
     
     // Custom
     @State private var viewModel = HomeViewModel()

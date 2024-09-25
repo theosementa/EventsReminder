@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Observation
 import WidgetKit
 
 @main
@@ -27,8 +26,8 @@ struct EventsReminderApp: App {
                 HomeView(router: router)
             }
             .environment(\.managedObjectContext, coreDataStack.viewContext)
-            .environment(eventRepository)
-            .environment(tagRepository)
+            .environmentObject(eventRepository)
+            .environmentObject(tagRepository)
             .task {
                 await eventRepository.fetchEvents()
                 EventManager.shared.updatePastEventsToNextValidDate()

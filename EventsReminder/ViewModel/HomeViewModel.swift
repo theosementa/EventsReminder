@@ -7,14 +7,13 @@
 
 import Foundation
 
-@Observable
-final class HomeViewModel {
+final class HomeViewModel: ObservableObject {
     let eventRepository: EventRepository = .shared
-    var filterViewModel: FilterViewModel = .shared
+    let filterViewModel: FilterViewModel = .shared
     
-    var searchText: String = ""
-    var selectedEvent: EventEntity?
-    var showEventDetails: Bool = false
+    @Published var searchText: String = ""
+    @Published var selectedEvent: EventEntity?
+    @Published var showEventDetails: Bool = false
 }
 
 extension HomeViewModel {

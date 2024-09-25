@@ -9,12 +9,11 @@ import Foundation
 import SwiftUI
 import WidgetKit
 
-@Observable
-final class TagRepository {
+final class TagRepository: ObservableObject {
     static let shared = TagRepository()
     let viewContext = CoreDataStack.shared.viewContext
     
-    var tags: [TagEntity] = []
+    @Published var tags: [TagEntity] = []
 }
 
 extension TagRepository {

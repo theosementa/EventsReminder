@@ -7,14 +7,13 @@
 
 import Foundation
 
-@Observable
-final class CreateNewEventViewModel {
+final class CreateNewEventViewModel: ObservableObject {
     
-    var name: String
-    var tag: TagEntity?
-    var date: Date
-    var repeatType: Repeat
-    var event: EventEntity?
+    @Published var name: String
+    @Published var tag: TagEntity?
+    @Published var date: Date
+    @Published var repeatType: Repeat
+    @Published var event: EventEntity?
     
     init(name: String = "", tag: TagEntity? = nil, date: Date = .now, repeatType: Repeat = .none, event: EventEntity? = nil) {
         self.name = name
@@ -24,10 +23,8 @@ final class CreateNewEventViewModel {
         self.event = event
     }
     
-    var allDay: Bool = true
-    
-    var presentingConfirmationDialog: Bool = false
-
+    @Published var allDay: Bool = true
+    @Published var presentingConfirmationDialog: Bool = false
 }
 
 // MARK: - Creation

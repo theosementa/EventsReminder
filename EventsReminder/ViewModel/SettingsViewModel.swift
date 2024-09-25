@@ -9,13 +9,12 @@ import Foundation
 import MessageUI
 import TheoKit
 
-@Observable
-final class SettingsViewModel {
+final class SettingsViewModel: ObservableObject {
     static let shared = SettingsViewModel()
     
-    var result: Result<MFMailComposeResult, Error>? = nil
-    var showMailView: Bool = false
-    var isMailForReportBug: Bool = false
+    @Published var result: Result<MFMailComposeResult, Error>? = nil
+    @Published var showMailView: Bool = false
+    @Published var isMailForReportBug: Bool = false
     
 }
 

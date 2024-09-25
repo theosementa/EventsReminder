@@ -38,14 +38,13 @@ enum EventFilter: CaseIterable {
     }
 }
 
-@Observable
-final class FilterViewModel {
+final class FilterViewModel: ObservableObject {
     static let shared = FilterViewModel()
     
-    var eventStatus: EventStatus = .comingSoon
-    
-    var filterSelected: EventFilter = .eventToCome
-    var eventToCome: Bool = true
-    var alphabeticOrder: Bool = true
+    @Published var eventStatus: EventStatus = .comingSoon
+
+    @Published var filterSelected: EventFilter = .eventToCome
+    @Published var eventToCome: Bool = true
+    @Published var alphabeticOrder: Bool = true
     
 }

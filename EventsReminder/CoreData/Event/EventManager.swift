@@ -8,11 +8,9 @@
 import Foundation
 import WidgetKit
 
-@Observable
-final class EventManager {
+final class EventManager: ObservableObject {
     static let shared = EventManager()
     let viewContext = CoreDataStack.shared.viewContext
-    
 }
 
 extension EventManager {

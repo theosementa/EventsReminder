@@ -13,7 +13,7 @@ struct ListOfEventsByTagsView: View {
     var router: NavigationManager
     
     // Repository
-    @Environment(EventRepository.self) private var eventRepository
+    @EnvironmentObject private var eventRepository: EventRepository
     
     // Custom
     @State private var filterViewModel: FilterViewModel = .shared

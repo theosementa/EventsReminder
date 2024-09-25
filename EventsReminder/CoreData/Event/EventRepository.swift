@@ -9,12 +9,11 @@ import Foundation
 import WidgetKit
 import TheoKit
 
-@Observable
-final class EventRepository {
+final class EventRepository: ObservableObject {
     static let shared = EventRepository()
     let viewContext = CoreDataStack.shared.viewContext
     
-    var events: [EventEntity] = []
+    @Published var events: [EventEntity] = []
 }
 
 extension EventRepository {
