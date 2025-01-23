@@ -10,19 +10,19 @@ import SwiftUI
 struct FilterToolbar: View {
     
     // Custom
-    @State private var viewModel = FilterViewModel.shared
+    @EnvironmentObject private var filterManager: FilterManager
     
     // MARK: -
     var body: some View {
         HStack {
             Menu {
                 ForEach(EventStatus.allCases, id: \.self) { status in
-                    Button { viewModel.eventStatus = status } label: {
+                    Button { filterManager.eventStatus = status } label: {
                         Text(status.description)
                     }
                 }
             } label: {
-                Text(viewModel.eventStatus.description)
+                Text(filterManager.eventStatus.description)
                     .font(.system(size: 12, weight: .semibold))
                 Image(systemName: "chevron.up.chevron.down")
                     .font(.system(size: 10, weight: .semibold))
@@ -39,14 +39,14 @@ struct FilterToolbar: View {
             Menu {
                 Menu {
                     Button(action: {
-                        viewModel.filterSelected = .alphabetic
-                        viewModel.alphabeticOrder = true
+                        filterManager.filterSelected = .alphabetic
+                        filterManager.alphabeticOrder = true
                     }, label: {
                         Text("A -> Z")
                     })
                     Button(action: {
-                        viewModel.filterSelected = .alphabetic
-                        viewModel.alphabeticOrder = false
+                        filterManager.filterSelected = .alphabetic
+                        filterManager.alphabeticOrder = false
                     }, label: {
                         Text("Z -> A")
                     })
@@ -56,14 +56,14 @@ struct FilterToolbar: View {
                 
                 Menu {
                     Button(action: {
-                        viewModel.filterSelected = .eventToCome
-                        viewModel.eventToCome = true
+                        filterManager.filterSelected = .eventToCome
+                        filterManager.eventToCome = true
                     }, label: {
                         Text("filter_nearest".localized)
                     })
                     Button(action: {
-                        viewModel.filterSelected = .eventToCome
-                        viewModel.eventToCome = false
+                        filterManager.filterSelected = .eventToCome
+                        filterManager.eventToCome = false
                     }, label: {
                         Text("filter_farthest".localized)
                     })
@@ -73,21 +73,21 @@ struct FilterToolbar: View {
                 
                 Button(action: {
                     withAnimation(.smooth) {
-                        viewModel.filterSelected = .tags
+                        filterManager.filterSelected = .tags
                     }
                 }, label: {
                     Text("word_category".localized)
                 })
             } label: {
-                Text(viewModel.filterSelected.description)
+                Text(filterManager.filterSelected.description)
                     .font(.system(size: 12, weight: .semibold))
                 
-                switch viewModel.filterSelected {
+                switch filterManager.filterSelected {
                 case .eventToCome:
-                    Image(systemName: viewModel.eventToCome ? "arrow.up" : "arrow.down")
+                    Image(systemName: filterManager.eventToCome ? "arrow.up" : "arrow.down")
                         .font(.system(size: 10, weight: .semibold))
                 case .alphabetic:
-                    Image(systemName: viewModel.alphabeticOrder ? "arrow.up" : "arrow.down")
+                    Image(systemName: filterManager.alphabeticOrder ? "arrow.up" : "arrow.down")
                         .font(.system(size: 10, weight: .semibold))
                 case .tags:
                     EmptyView()

@@ -16,7 +16,7 @@ struct ListOfEventsByTagsView: View {
     @EnvironmentObject private var eventRepository: EventRepository
     
     // Custom
-    @State private var filterViewModel: FilterViewModel = .shared
+    @State private var filterViewModel: FilterManager = .shared
     
     // MARK: -
     var body: some View {

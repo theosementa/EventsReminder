@@ -7,38 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D9273D512BF48D9B00554E80 /* EventsReminderWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96F37C02BF4803200C4A837 /* EventsReminderWidget.swift */; };
-		D9273D582BF49EBA00554E80 /* SmallWidget1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D572BF49EBA00554E80 /* SmallWidget1.swift */; };
-		D9273D592BF49F8000554E80 /* SmallWidget1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D572BF49EBA00554E80 /* SmallWidget1.swift */; };
-		D9273D5F2BF4ADEB00554E80 /* SmallWidget2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D5E2BF4ADEB00554E80 /* SmallWidget2.swift */; };
-		D9273D612BF4AE8200554E80 /* IntentEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D602BF4AE8200554E80 /* IntentEntry.swift */; };
-		D9273D622BF4AE8600554E80 /* IntentEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D602BF4AE8200554E80 /* IntentEntry.swift */; };
-		D9273D642BF4AEBA00554E80 /* EventsReminderWidget2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D632BF4AEBA00554E80 /* EventsReminderWidget2.swift */; };
-		D9273D662BF4AEE400554E80 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D652BF4AEE400554E80 /* Provider.swift */; };
-		D9273D672BF4AF3000554E80 /* EventsReminderWidget2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D632BF4AEBA00554E80 /* EventsReminderWidget2.swift */; };
-		D9273D682BF4AF3C00554E80 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D652BF4AEE400554E80 /* Provider.swift */; };
-		D9273D692BF4AF4300554E80 /* SmallWidget2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D5E2BF4ADEB00554E80 /* SmallWidget2.swift */; };
-		D9273D6B2BF4BE7D00554E80 /* EventsReminderWidget3.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D6A2BF4BE7D00554E80 /* EventsReminderWidget3.swift */; };
-		D9273D6D2BF4BF4700554E80 /* StaticProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D6C2BF4BF4700554E80 /* StaticProvider.swift */; };
-		D9273D6E2BF4BF9500554E80 /* StaticProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D6C2BF4BF4700554E80 /* StaticProvider.swift */; };
-		D9273D702BF4BFBF00554E80 /* StaticEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D6F2BF4BFBF00554E80 /* StaticEntry.swift */; };
-		D9273D712BF4BFD300554E80 /* StaticEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D6F2BF4BFBF00554E80 /* StaticEntry.swift */; };
-		D9273D742BF4C15200554E80 /* EventsReminderWidget3.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D6A2BF4BE7D00554E80 /* EventsReminderWidget3.swift */; };
-		D9273D772BF4C28100554E80 /* MediumWidget1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D762BF4C28100554E80 /* MediumWidget1.swift */; };
-		D9273D782BF4C2C900554E80 /* MediumWidget1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9273D762BF4C28100554E80 /* MediumWidget1.swift */; };
 		D96F376C2BF47C9000C4A837 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96F376B2BF47C9000C4A837 /* Intents.framework */; };
-		D96F376F2BF47C9000C4A837 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96F376E2BF47C9000C4A837 /* IntentHandler.swift */; };
 		D96F37842BF47C9000C4A837 /* EventsReminderIntent.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D96F37692BF47C9000C4A837 /* EventsReminderIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D96F37BB2BF4803200C4A837 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96F37912BF47CD800C4A837 /* WidgetKit.framework */; };
 		D96F37BC2BF4803200C4A837 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96F37932BF47CD800C4A837 /* SwiftUI.framework */; };
-		D96F37BF2BF4803200C4A837 /* WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96F37BE2BF4803200C4A837 /* WidgetBundle.swift */; };
-		D96F37C12BF4803200C4A837 /* EventsReminderWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96F37C02BF4803200C4A837 /* EventsReminderWidget.swift */; };
-		D96F37C52BF4803300C4A837 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D96F37C42BF4803300C4A837 /* Assets.xcassets */; };
 		D96F37C92BF4803300C4A837 /* EventsReminderWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D96F37BA2BF4803200C4A837 /* EventsReminderWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		D96F37CF2BF481A600C4A837 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96F376E2BF47C9000C4A837 /* IntentHandler.swift */; };
-		D9C414CD2BF608260000F911 /* WidgetIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = D9C414CC2BF608260000F911 /* WidgetIntents.intentdefinition */; };
-		D9C414CE2BF608260000F911 /* WidgetIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = D9C414CC2BF608260000F911 /* WidgetIntents.intentdefinition */; };
-		D9C414CF2BF608260000F911 /* WidgetIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = D9C414CC2BF608260000F911 /* WidgetIntents.intentdefinition */; };
 		D9EE23432C047D6E003A24AD /* TheoKit in Frameworks */ = {isa = PBXBuildFile; productRef = D9EE23422C047D6E003A24AD /* TheoKit */; };
 		D9EE23452C047D8D003A24AD /* TheoKit in Frameworks */ = {isa = PBXBuildFile; productRef = D9EE23442C047D8D003A24AD /* TheoKit */; };
 		D9EE23472C047D92003A24AD /* TheoKit in Frameworks */ = {isa = PBXBuildFile; productRef = D9EE23462C047D92003A24AD /* TheoKit */; };
@@ -78,33 +51,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D9273D572BF49EBA00554E80 /* SmallWidget1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidget1.swift; sourceTree = "<group>"; };
-		D9273D5E2BF4ADEB00554E80 /* SmallWidget2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidget2.swift; sourceTree = "<group>"; };
-		D9273D602BF4AE8200554E80 /* IntentEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentEntry.swift; sourceTree = "<group>"; };
-		D9273D632BF4AEBA00554E80 /* EventsReminderWidget2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsReminderWidget2.swift; sourceTree = "<group>"; };
-		D9273D652BF4AEE400554E80 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
-		D9273D6A2BF4BE7D00554E80 /* EventsReminderWidget3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsReminderWidget3.swift; sourceTree = "<group>"; };
-		D9273D6C2BF4BF4700554E80 /* StaticProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticProvider.swift; sourceTree = "<group>"; };
-		D9273D6F2BF4BFBF00554E80 /* StaticEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticEntry.swift; sourceTree = "<group>"; };
-		D9273D762BF4C28100554E80 /* MediumWidget1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidget1.swift; sourceTree = "<group>"; };
 		D96F37692BF47C9000C4A837 /* EventsReminderIntent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EventsReminderIntent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D96F376B2BF47C9000C4A837 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
-		D96F376E2BF47C9000C4A837 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
-		D96F37702BF47C9000C4A837 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D96F37762BF47C9000C4A837 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
 		D96F37912BF47CD800C4A837 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		D96F37932BF47CD800C4A837 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		D96F37A32BF47CFE00C4A837 /* EventsReminderWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EventsReminderWidgetExtension.entitlements; sourceTree = "<group>"; };
-		D96F37A42BF47D2200C4A837 /* EventsReminderIntent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EventsReminderIntent.entitlements; sourceTree = "<group>"; };
 		D96F37BA2BF4803200C4A837 /* EventsReminderWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EventsReminderWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		D96F37BE2BF4803200C4A837 /* WidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetBundle.swift; sourceTree = "<group>"; };
-		D96F37C02BF4803200C4A837 /* EventsReminderWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsReminderWidget.swift; sourceTree = "<group>"; };
-		D96F37C42BF4803300C4A837 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D96F37C62BF4803300C4A837 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D98AEC652BF103FD005C4AA6 /* EventsReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventsReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9C414CB2BF608260000F911 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/WidgetIntents.intentdefinition; sourceTree = "<group>"; };
-		D9C414D12BF6082A0000F911 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WidgetIntents.strings; sourceTree = "<group>"; };
-		D9C414D32BF6082B0000F911 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/WidgetIntents.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -126,12 +80,14 @@
 				Core/CoreData/Repositories/TagRepository.swift,
 				Domain/Entities/EventEntity.swift,
 				Domain/Entities/TagEntity.swift,
+				Domain/Enums/EventFilter.swift,
+				Domain/Enums/EventStatus.swift,
 				Domain/Enums/RepeatEnum.swift,
 				Ressources/Localizable/Word.swift,
 				Utilities/Extensions/Date.swift,
 				Utilities/Extensions/UIColor.swift,
 				Utilities/Helper/Preferences.swift,
-				Utilities/Manager/NotificationManager.swift,
+				Utilities/Managers/NotificationManager.swift,
 			);
 			target = D96F37B92BF4803200C4A837 /* EventsReminderWidgetExtension */;
 		};
@@ -145,17 +101,77 @@
 				Core/CoreData/Repositories/TagRepository.swift,
 				Domain/Entities/EventEntity.swift,
 				Domain/Entities/TagEntity.swift,
+				Domain/Enums/EventFilter.swift,
+				Domain/Enums/EventStatus.swift,
 				Domain/Enums/RepeatEnum.swift,
 				Utilities/Extensions/Date.swift,
 				Utilities/Helper/Preferences.swift,
-				Utilities/Manager/NotificationManager.swift,
+				Utilities/Managers/NotificationManager.swift,
+			);
+			target = D96F37682BF47C9000C4A837 /* EventsReminderIntent */;
+		};
+		D93BE0A72D42BF7A00B4252A /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				/Localized/WidgetIntents.intentdefinition,
+				Assets.xcassets,
+				Info.plist,
+				WidgetBundle.swift,
+			);
+			target = D98AEC642BF103FD005C4AA6 /* EventsReminder */;
+		};
+		D93BE0A92D42BF7A00B4252A /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				/Localized/WidgetIntents.intentdefinition,
+				Info.plist,
+			);
+			target = D96F37B92BF4803200C4A837 /* EventsReminderWidgetExtension */;
+		};
+		D93BE0B22D42BF7F00B4252A /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				IntentHandler.swift,
+			);
+			target = D96F37B92BF4803200C4A837 /* EventsReminderWidgetExtension */;
+		};
+		D93BE0B32D42BF7F00B4252A /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				IntentHandler.swift,
 			);
 			target = D96F37682BF47C9000C4A837 /* EventsReminderIntent */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		D93BE0A82D42BF7A00B4252A /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = D98AEC612BF103FD005C4AA6 /* Sources */;
+			membershipExceptions = (
+				/Localized/WidgetIntents.intentdefinition,
+			);
+		};
+		D93BE0AA2D42BF7A00B4252A /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = D96F37B62BF4803200C4A837 /* Sources */;
+			membershipExceptions = (
+				/Localized/WidgetIntents.intentdefinition,
+			);
+		};
+		D93BE0AB2D42BF7A00B4252A /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = D96F37652BF47C9000C4A837 /* Sources */;
+			membershipExceptions = (
+				/Localized/WidgetIntents.intentdefinition,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		D93BE0102D42BCA100B4252A /* EventsReminder */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D93BE0572D42BCA100B4252A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D93BE0582D42BCA100B4252A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D93BE0592D42BCA100B4252A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = EventsReminder; sourceTree = "<group>"; };
+		D93BE0852D42BF7A00B4252A /* EventsReminderWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D93BE0A72D42BF7A00B4252A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D93BE0A82D42BF7A00B4252A /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */, D93BE0A92D42BF7A00B4252A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D93BE0AA2D42BF7A00B4252A /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */, D93BE0AB2D42BF7A00B4252A /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = EventsReminderWidget; sourceTree = "<group>"; };
+		D93BE0AF2D42BF7F00B4252A /* EventsReminderIntent */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D93BE0B22D42BF7F00B4252A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D93BE0B32D42BF7F00B4252A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = EventsReminderIntent; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,46 +206,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D9273D562BF49E8700554E80 /* Widgets */ = {
-			isa = PBXGroup;
-			children = (
-				D9273D572BF49EBA00554E80 /* SmallWidget1.swift */,
-				D9273D5E2BF4ADEB00554E80 /* SmallWidget2.swift */,
-			);
-			path = Widgets;
-			sourceTree = "<group>";
-		};
-		D9273D722BF4BFE500554E80 /* Configurable Widget */ = {
-			isa = PBXGroup;
-			children = (
-				D9273D602BF4AE8200554E80 /* IntentEntry.swift */,
-				D9273D652BF4AEE400554E80 /* Provider.swift */,
-				D96F37C02BF4803200C4A837 /* EventsReminderWidget.swift */,
-				D9273D632BF4AEBA00554E80 /* EventsReminderWidget2.swift */,
-				D9273D562BF49E8700554E80 /* Widgets */,
-			);
-			path = "Configurable Widget";
-			sourceTree = "<group>";
-		};
-		D9273D732BF4C00900554E80 /* Static Widget */ = {
-			isa = PBXGroup;
-			children = (
-				D9273D6F2BF4BFBF00554E80 /* StaticEntry.swift */,
-				D9273D6C2BF4BF4700554E80 /* StaticProvider.swift */,
-				D9273D6A2BF4BE7D00554E80 /* EventsReminderWidget3.swift */,
-				D9273D752BF4C25D00554E80 /* Widgets */,
-			);
-			path = "Static Widget";
-			sourceTree = "<group>";
-		};
-		D9273D752BF4C25D00554E80 /* Widgets */ = {
-			isa = PBXGroup;
-			children = (
-				D9273D762BF4C28100554E80 /* MediumWidget1.swift */,
-			);
-			path = Widgets;
-			sourceTree = "<group>";
-		};
 		D96F376A2BF47C9000C4A837 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,36 +217,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D96F376D2BF47C9000C4A837 /* EventsReminderIntent */ = {
-			isa = PBXGroup;
-			children = (
-				D96F37A42BF47D2200C4A837 /* EventsReminderIntent.entitlements */,
-				D96F376E2BF47C9000C4A837 /* IntentHandler.swift */,
-				D96F37702BF47C9000C4A837 /* Info.plist */,
-			);
-			path = EventsReminderIntent;
-			sourceTree = "<group>";
-		};
-		D96F37BD2BF4803200C4A837 /* EventsReminderWidget */ = {
-			isa = PBXGroup;
-			children = (
-				D96F37BE2BF4803200C4A837 /* WidgetBundle.swift */,
-				D9273D722BF4BFE500554E80 /* Configurable Widget */,
-				D9273D732BF4C00900554E80 /* Static Widget */,
-				D9C414CC2BF608260000F911 /* WidgetIntents.intentdefinition */,
-				D96F37C62BF4803300C4A837 /* Info.plist */,
-				D96F37C42BF4803300C4A837 /* Assets.xcassets */,
-			);
-			path = EventsReminderWidget;
-			sourceTree = "<group>";
-		};
 		D98AEC5C2BF103FD005C4AA6 = {
 			isa = PBXGroup;
 			children = (
 				D96F37A32BF47CFE00C4A837 /* EventsReminderWidgetExtension.entitlements */,
 				D93BE0102D42BCA100B4252A /* EventsReminder */,
-				D96F37BD2BF4803200C4A837 /* EventsReminderWidget */,
-				D96F376D2BF47C9000C4A837 /* EventsReminderIntent */,
+				D93BE0852D42BF7A00B4252A /* EventsReminderWidget */,
+				D93BE0AF2D42BF7F00B4252A /* EventsReminderIntent */,
 				D96F376A2BF47C9000C4A837 /* Frameworks */,
 				D98AEC662BF103FD005C4AA6 /* Products */,
 			);
@@ -321,6 +274,9 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				D93BE0852D42BF7A00B4252A /* EventsReminderWidget */,
+			);
 			name = EventsReminderWidgetExtension;
 			packageProductDependencies = (
 				D9EE23442C047D8D003A24AD /* TheoKit */,
@@ -346,6 +302,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				D93BE0102D42BCA100B4252A /* EventsReminder */,
+				D93BE0852D42BF7A00B4252A /* EventsReminderWidget */,
 			);
 			name = EventsReminder;
 			packageProductDependencies = (
@@ -414,7 +371,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D96F37C52BF4803300C4A837 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,8 +388,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D96F376F2BF47C9000C4A837 /* IntentHandler.swift in Sources */,
-				D9C414CF2BF608260000F911 /* WidgetIntents.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,19 +395,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D96F37C12BF4803200C4A837 /* EventsReminderWidget.swift in Sources */,
-				D9273D712BF4BFD300554E80 /* StaticEntry.swift in Sources */,
-				D9273D682BF4AF3C00554E80 /* Provider.swift in Sources */,
-				D9273D782BF4C2C900554E80 /* MediumWidget1.swift in Sources */,
-				D9273D622BF4AE8600554E80 /* IntentEntry.swift in Sources */,
-				D9C414CE2BF608260000F911 /* WidgetIntents.intentdefinition in Sources */,
-				D9273D672BF4AF3000554E80 /* EventsReminderWidget2.swift in Sources */,
-				D96F37CF2BF481A600C4A837 /* IntentHandler.swift in Sources */,
-				D9273D6E2BF4BF9500554E80 /* StaticProvider.swift in Sources */,
-				D9273D692BF4AF4300554E80 /* SmallWidget2.swift in Sources */,
-				D9273D742BF4C15200554E80 /* EventsReminderWidget3.swift in Sources */,
-				D96F37BF2BF4803200C4A837 /* WidgetBundle.swift in Sources */,
-				D9273D592BF49F8000554E80 /* SmallWidget1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,17 +402,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9273D612BF4AE8200554E80 /* IntentEntry.swift in Sources */,
-				D9273D6D2BF4BF4700554E80 /* StaticProvider.swift in Sources */,
-				D9273D702BF4BFBF00554E80 /* StaticEntry.swift in Sources */,
-				D9273D772BF4C28100554E80 /* MediumWidget1.swift in Sources */,
-				D9273D582BF49EBA00554E80 /* SmallWidget1.swift in Sources */,
-				D9273D512BF48D9B00554E80 /* EventsReminderWidget.swift in Sources */,
-				D9273D6B2BF4BE7D00554E80 /* EventsReminderWidget3.swift in Sources */,
-				D9273D642BF4AEBA00554E80 /* EventsReminderWidget2.swift in Sources */,
-				D9273D5F2BF4ADEB00554E80 /* SmallWidget2.swift in Sources */,
-				D9C414CD2BF608260000F911 /* WidgetIntents.intentdefinition in Sources */,
-				D9273D662BF4AEE400554E80 /* Provider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,19 +419,6 @@
 			targetProxy = D96F37C72BF4803300C4A837 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		D9C414CC2BF608260000F911 /* WidgetIntents.intentdefinition */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D9C414CB2BF608260000F911 /* Base */,
-				D9C414D12BF6082A0000F911 /* en */,
-				D9C414D32BF6082B0000F911 /* fr */,
-			);
-			name = WidgetIntents.intentdefinition;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D96F37862BF47C9000C4A837 /* Debug */ = {

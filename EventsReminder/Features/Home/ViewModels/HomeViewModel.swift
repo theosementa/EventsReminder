@@ -9,7 +9,7 @@ import Foundation
 
 final class HomeViewModel: ObservableObject {
     let eventRepository: EventRepository = .shared
-    let filterViewModel: FilterViewModel = .shared
+    let filterManager: FilterManager = .shared
     
     @Published var searchText: String = ""
     @Published var selectedEvent: EventEntity?
@@ -19,17 +19,17 @@ final class HomeViewModel: ObservableObject {
 extension HomeViewModel {
     
     var searchResults: [EventEntity] {
-        let events = (filterViewModel.eventStatus == .comingSoon ? eventRepository.eventsComingSoon : eventRepository.eventsDone)
+        let events = (filterManager.eventStatus == .comingSoon ? eventRepository.eventsComingSoon : eventRepository.eventsDone)
             .sorted {
-                switch filterViewModel.filterSelected {
+                switch filterManager.filterSelected {
                 case .eventToCome:
-                    if filterViewModel.eventToCome {
+                    if filterManager.eventToCome {
                         return $0.daysRemaining < $1.daysRemaining
                     } else {
                         return $0.daysRemaining > $1.daysRemaining
                     }
                 case .alphabetic:
-                    if filterViewModel.alphabeticOrder {
+                    if filterManager.alphabeticOrder {
                         return $0.name < $1.name
                     } else {
                         return $0.name > $1.name

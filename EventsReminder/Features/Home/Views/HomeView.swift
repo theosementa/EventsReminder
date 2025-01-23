@@ -16,6 +16,7 @@ struct HomeView: View {
     // Repository
     @EnvironmentObject private var eventRepository: EventRepository
     @EnvironmentObject private var tagRepository: TagRepository
+    @EnvironmentObject private var filterManager: FilterManager
     
     // Custom
     @StateObject private var viewModel = HomeViewModel()
@@ -37,7 +38,8 @@ struct HomeView: View {
                         .listRowSeparator(.hidden)
                         .listRowInsets(.init(top: 0, leading: 16, bottom: 6, trailing: 16))
                         .listRowBackground(Color.Apple.background.edgesIgnoringSafeArea(.all))
-                    if viewModel.filterViewModel.filterSelected == .tags {
+                    
+                    if filterManager.filterSelected == .tags {
                         ListOfEventsByTagsView(router: router)
                             .listRowSeparator(.hidden)
                             .listRowInsets(.init(top: 0, leading: 16, bottom: 6, trailing: 16))

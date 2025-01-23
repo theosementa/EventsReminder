@@ -19,6 +19,8 @@ struct EventsReminderApp: App {
     private let eventRepository: EventRepository = .shared
     private let tagRepository = TagRepository.shared
     
+    @StateObject private var filterManager: FilterManager = .shared
+    
     // MARK: -
     var body: some Scene {
         WindowGroup {
@@ -28,6 +30,7 @@ struct EventsReminderApp: App {
             .environment(\.managedObjectContext, coreDataStack.viewContext)
             .environmentObject(eventRepository)
             .environmentObject(tagRepository)
+            .environmentObject(filterManager)
             .task {
                 await eventRepository.fetchEvents()
                 EventManager.shared.updatePastEventsToNextValidDate()
