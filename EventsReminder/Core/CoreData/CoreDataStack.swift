@@ -24,7 +24,9 @@ class CoreDataStack {
         storeDescription.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
         storeDescription.shouldInferMappingModelAutomatically = true
         storeDescription.shouldMigrateStoreAutomatically = true
-        storeDescription.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: "iCloud.com.sementa.eventsreminder")
+        storeDescription.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(
+            containerIdentifier: "iCloud.com.sementa.eventsreminder"
+        )
         
         persistentContainer = NSPersistentCloudKitContainer(name: appName)
         persistentContainer.persistentStoreDescriptions = [storeDescription]

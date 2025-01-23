@@ -109,6 +109,7 @@ extension EventRepository {
             EventManager.shared.updatePastEventsToNextValidDateForWidget(events: results)
             
             return results
+                .filter { $0.daysRemaining >= 0 }
                 .sorted(by: { $0.daysRemaining < $1.daysRemaining })
                 .first
         } catch let error as NSError {
