@@ -14,7 +14,7 @@ struct HomeView: View {
     var router: NavigationManager
     
     // Repository
-    @EnvironmentObject private var eventRepository: EventRepository
+    @EnvironmentObject private var eventStore: EventStore
     @EnvironmentObject private var tagRepository: TagRepository
     @EnvironmentObject private var filterManager: FilterManager
     
@@ -27,7 +27,7 @@ struct HomeView: View {
     // MARK: -
     var body: some View {
         VStack {
-            if eventRepository.events.isEmpty {
+            if eventStore.events.isEmpty {
                 Text("home_add_first_event".localized)
                     .font(.system(size: 18, weight: .semibold))
                     .multilineTextAlignment(.center)
@@ -91,14 +91,14 @@ struct HomeView: View {
             }
         }
         .refreshable {
-            await eventRepository.fetchEvents()
+            await eventStore.fetchEvents()
             tagRepository.fetchTags()
         }
         .onAppear {
             if isFirstLaunch {
                 router.presentOnboarding {
                     Task {
-                        await eventRepository.fetchEvents()
+                        await eventStore.fetchEvents()
                         isFirstLaunch = false
                     }
                 }

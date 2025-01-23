@@ -14,7 +14,7 @@ struct EventDetailView: View {
     @ObservedObject var event: EventEntity
     
     // Repository
-    @State private var eventRepository: EventRepository = .shared
+    @State private var eventStore: EventStore = .shared
     
     // Custom
     @State private var createNewEventViewModel = CreateNewEventViewModel()
@@ -83,7 +83,7 @@ struct EventDetailView: View {
                 
                 Button(role: .destructive, action: {
                     Task {
-                        await eventRepository.deleteEvent(event)
+                        await eventStore.deleteEvent(event: event)
                         dismiss()
                     }
                 }, label: {

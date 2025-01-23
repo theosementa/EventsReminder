@@ -13,15 +13,15 @@ struct ListOfEventsByTagsView: View {
     var router: NavigationManager
     
     // Repository
-    @EnvironmentObject private var eventRepository: EventRepository
+    @EnvironmentObject private var eventStore: EventStore
     
     // Custom
     @State private var filterViewModel: FilterManager = .shared
     
     // MARK: -
     var body: some View {
-        let events: [EventEntity] = filterViewModel.eventStatus == .comingSoon ? eventRepository.eventsComingSoon : eventRepository.eventsDone
-        ForEach(eventRepository.eventsByTags(events: events).keys.sorted { $0.name < $1.name }, id: \.self) { tag in
+        let events: [EventEntity] = filterViewModel.eventStatus == .comingSoon ? eventStore.eventsComingSoon : eventStore.eventsDone
+        ForEach(eventStore.eventsByTags(events: events).keys.sorted { $0.name < $1.name }, id: \.self) { tag in
             VStack(spacing: 8) {
                 HStack {
                     Text(tag.name.uppercased())
@@ -32,7 +32,7 @@ struct ListOfEventsByTagsView: View {
                 .padding(.leading, 8)
                 .padding(.top, 4)
                 VStack(spacing: 4) {
-                    ForEach(eventRepository.eventsByTags(events: events)[tag] ?? []) { event in
+                    ForEach(eventStore.eventsByTags(events: events)[tag] ?? []) { event in
                         EventRow(event: event)
                             .onTapGesture {
                                 router.pushEventDetail(event: event)

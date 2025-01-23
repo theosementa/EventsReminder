@@ -8,7 +8,7 @@
 import Foundation
 
 final class HomeViewModel: ObservableObject {
-    let eventRepository: EventRepository = .shared
+    let eventStore: EventStore = .shared
     let filterManager: FilterManager = .shared
     
     @Published var searchText: String = ""
@@ -19,7 +19,7 @@ final class HomeViewModel: ObservableObject {
 extension HomeViewModel {
     
     var searchResults: [EventEntity] {
-        let events = (filterManager.eventStatus == .comingSoon ? eventRepository.eventsComingSoon : eventRepository.eventsDone)
+        let events = (filterManager.eventStatus == .comingSoon ? eventStore.eventsComingSoon : eventStore.eventsDone)
             .sorted {
                 switch filterManager.filterSelected {
                 case .eventToCome:

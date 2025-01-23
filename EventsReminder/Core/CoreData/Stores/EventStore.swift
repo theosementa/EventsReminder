@@ -15,6 +15,7 @@ final class EventStore: ObservableObject {
 
 extension EventStore {
     
+    @MainActor
     func fetchEvents() async {
         do {
             self.events = try await EventRepository.fetchEvents()
@@ -23,6 +24,7 @@ extension EventStore {
         }
     }
     
+    @MainActor
     func createEvent(creationModel: EventCreationModel) async {
         do {
             let newEvent = try await EventRepository.createEvent(creationModel: creationModel)
@@ -35,6 +37,7 @@ extension EventStore {
         }
     }
     
+    @MainActor
     func updateEvent(updateModel: EventUpdateModel) {
         do {
             try EventRepository.updateEvent(updateModel: updateModel)
@@ -50,6 +53,7 @@ extension EventStore {
         }
     }
     
+    @MainActor
     func deleteEvent(event: EventEntity) async {
         do {
             try EventRepository.deleteEvent(event)

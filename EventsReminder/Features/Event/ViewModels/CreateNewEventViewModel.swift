@@ -45,9 +45,9 @@ extension CreateNewEventViewModel {
         } else { return }
     }
     
-    func updateEvent(_ event: EventEntity) {
+    func updateEvent(_ event: EventEntity) async {
         if canEventBeCreated() {
-            EventStore.shared.updateEvent(
+            await EventStore.shared.updateEvent(
                 updateModel: .init(
                     event: event,
                     name: name,

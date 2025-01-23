@@ -11,9 +11,6 @@ import TheoKit
 
 final class EventRepository: ObservableObject {
     static let shared = EventRepository()
-    
-    
-    
 }
 
 extension EventRepository {
@@ -55,7 +52,6 @@ extension EventRepository {
         event.tag = updateModel.tag
         
         try CoreDataStack.shared.saveContext()
-        
         WidgetCenter.shared.reloadAllTimelines()
     }
     
@@ -63,6 +59,7 @@ extension EventRepository {
         let viewContext = CoreDataStack.shared.viewContext
         
         viewContext.delete(event)
+        
         try CoreDataStack.shared.saveContext()
         WidgetCenter.shared.reloadAllTimelines()
     }
@@ -81,7 +78,10 @@ extension EventRepository {
             EventManager.shared.updatePastEventsToNextValidDateForWidget(events: events)
             return events
                 .sorted(by: { $0.daysRemaining < $1.daysRemaining })
-        } catch { return [] }
+        } catch let error as NSError {
+            print("Could not fetch.\(error.userInfo)")
+            return []
+        }
     }
     
     func fetchEventWithCustomRequestForDisplayInWidget(eventID: String) -> EventEntity? {
@@ -94,7 +94,7 @@ extension EventRepository {
             EventManager.shared.updatePastEventsToNextValidDateForWidget(events: results)
             
             return results.first
-        } catch let error as NSError{
+        } catch let error as NSError {
             print("Could not fetch.\(error.userInfo)")
             return nil
         }
@@ -111,10 +111,10 @@ extension EventRepository {
             return results
                 .sorted(by: { $0.daysRemaining < $1.daysRemaining })
                 .first
-        } catch let error as NSError{
+        } catch let error as NSError {
             print("Could not fetch.\(error.userInfo)")
             return nil
         }
     }
     
-} // End extension
+}

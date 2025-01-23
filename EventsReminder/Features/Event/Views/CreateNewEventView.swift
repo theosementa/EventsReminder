@@ -106,12 +106,15 @@ struct CreateNewEventView: View {
                 
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
-                        if let event = viewModel.event {
-                            viewModel.updateEvent(event)
-                        } else {
-                            viewModel.createNewEvent()
+                        Task {
+                            if let event = viewModel.event {
+                                await viewModel.updateEvent(event)
+                            } else {
+                                
+                                await viewModel.createNewEvent()
+                            }
+                            dismiss()
                         }
-                        dismiss()
                     }, label: {
                         Text("word_save".localized)
                     })
