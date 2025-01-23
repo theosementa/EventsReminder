@@ -64,7 +64,7 @@ struct EventDetailView: View {
                 }
             }
             
-            if !event.isFault {
+            if event.date > .now {
                 TimeCell(timeDuration: TimeManager().calculateElapsedTime(from: event.date))
             }
             

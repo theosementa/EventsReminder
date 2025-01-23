@@ -15,21 +15,17 @@ class CoreDataStack {
     let persistentContainer: NSPersistentCloudKitContainer
     
     private init() {
-        // Définir le nom de l'application et le groupe d'applications
         let appName = "EventsReminder"
         let appGroup = "group.sementa.eventsreminder"
         
-        // Créer l'URL du store
         let storeURL = URL.storeURL(for: appGroup, databaseName: appName)
         
-        // Configurer la description du store
         let storeDescription = NSPersistentStoreDescription(url: storeURL)
         storeDescription.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
         storeDescription.shouldInferMappingModelAutomatically = true
         storeDescription.shouldMigrateStoreAutomatically = true
         storeDescription.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: "iCloud.com.sementa.eventsreminder")
         
-        // Initialiser le conteneur persistant
         persistentContainer = NSPersistentCloudKitContainer(name: appName)
         persistentContainer.persistentStoreDescriptions = [storeDescription]
         

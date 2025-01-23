@@ -16,6 +16,7 @@ struct CreateNewEventView: View {
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject private var tagRepository: TagRepository
     
+    // init
     init(event: EventEntity? = nil) {
         self._viewModel = StateObject(wrappedValue: CreateNewEventViewModel(event: event))
     }
@@ -25,7 +26,7 @@ struct CreateNewEventView: View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 40) {
-                    VStack(spacing: 16) {
+                    VStack(spacing: 12) {
                         TextField("createEvent_name".localized, text: $viewModel.name)
                             .fontWeight(.medium)
                             .frame(maxWidth: .infinity)
@@ -47,13 +48,13 @@ struct CreateNewEventView: View {
                                             RoundedRectangle(cornerRadius: 8, style: .continuous)
                                                 .fill(tag.color.toColor().opacity(0.3))
                                         }
+                                } else {
+                                    Image(systemName: "chevron.right")
                                 }
-                                Image(systemName: "chevron.right")
                             }
                             .foregroundStyle(Color(uiColor: .label))
-                            .backgroundComponent(isInSheet: true)
+                            .backgroundComponent(isInSheet: true, padding: viewModel.tag != nil ? 8 : 12)
                         }
-
                     }
                     
                     VStack {
@@ -62,7 +63,7 @@ struct CreateNewEventView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.leading)
                         
-                        VStack(spacing: 16) {
+                        VStack(spacing: 12) {
                             DatePicker("", selection: $viewModel.date, displayedComponents: viewModel.allDay ? .date : [.hourAndMinute, .date])
                                 .padding(8)
                                 .backgroundComponent(isInSheet: true, padding: 0)

@@ -11,7 +11,6 @@ import UserNotifications
 final class NotificationManager {
     static let shared = NotificationManager()
     let center = UNUserNotificationCenter.current()
-
 }
 
 extension NotificationManager {

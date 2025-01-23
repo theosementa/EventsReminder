@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23231" systemVersion="24A335" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="EventEntity" representedClassName="EventEntity" syncable="YES">
-        <attribute name="dateEvent" optional="YES" attributeType="Date" defaultDateTimeInterval="737216700" usesScalarValueType="NO"/>
+        <attribute name="dateEvent" optional="YES" attributeType="String" defaultValueString="12/05/2024, 16:25"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="repeatEnum" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>

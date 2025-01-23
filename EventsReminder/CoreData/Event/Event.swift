@@ -18,30 +18,26 @@ public class EventEntity: NSManagedObject, Identifiable {
 
     @NSManaged public var id: UUID
     @NSManaged public var name: String
-    @NSManaged private var dateEvent: Date?
+    @NSManaged private var dateEvent: String?
     @NSManaged private var repeatEnum: Int16
     @NSManaged public var tag: TagEntity?
     
     public var date: Date {
         get {
             if let dateEvent {
-                return dateEvent
+                return ISO8601DateFormatter().date(from: dateEvent) ?? .now
             } else {
                 return .now
             }
         }
         set {
-            dateEvent = newValue
+            dateEvent = newValue.ISO8601Format()
         }
     }
     
     public var repeatType: Repeat {
-        get {
-            return Repeat(rawValue: Int(repeatEnum)) ?? .none
-        }
-        set {
-            repeatEnum = Int16(newValue.rawValue)
-        }
+        get { return Repeat(rawValue: Int(repeatEnum)) ?? .none }
+        set { repeatEnum = Int16(newValue.rawValue) }
     }
     
     public var daysRemaining: Int {
@@ -84,7 +80,7 @@ extension EventEntity {
         let preview = EventEntity(context: CoreDataStack.shared.viewContext)
         preview.id = UUID()
         preview.name = "Preview 1"
-        preview.dateEvent = Calendar.current.date(byAdding: .day, value: 10, to: .now) ?? .now
+        preview.dateEvent = Calendar.current.date(byAdding: .day, value: 10, to: .now)?.ISO8601Format() ?? Date.now.ISO8601Format()
         preview.repeatType = .yearly
         
         return preview

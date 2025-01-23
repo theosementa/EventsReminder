@@ -44,7 +44,7 @@ struct EventRow: View {
                     strokeColor: event.tag?.color.toColor() ?? nil
                 )
         }
-        .backgroundComponent(padding: 8)
+        .backgroundComponent(radius: 20, padding: 8)
     } // End body
 } // End struct
 
