@@ -24,11 +24,9 @@ extension NavigationDirection: Equatable {
         case (.onboarding, .onboarding),
             (.home, .home),
             (.createNewEvent, .createNewEvent),
+            (.eventDetail, .eventDetail),
             (.settings, .settings):
             return true
-            
-        case let (.eventDetail(lhsEvent), .eventDetail(rhsEvent)):
-            return lhsEvent.id == rhsEvent.id
             
         default:
             return false

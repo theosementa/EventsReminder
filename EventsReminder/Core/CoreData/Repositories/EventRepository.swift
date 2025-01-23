@@ -11,104 +11,59 @@ import TheoKit
 
 final class EventRepository: ObservableObject {
     static let shared = EventRepository()
-    let viewContext = CoreDataStack.shared.viewContext
     
-    @Published var events: [EventEntity] = []
-}
-
-extension EventRepository {
     
-    var eventsComingSoon: [EventEntity] {
-        return events
-            .filter { $0.daysRemaining >= 0 }
-            .sorted(by: { $0.daysRemaining < $1.daysRemaining })
-    }
-    
-    var eventsDone: [EventEntity] {
-        return events
-            .filter { $0.daysRemaining < 0 }
-            .sorted(by: { $0.daysRemaining < $1.daysRemaining })
-    }
-    
-    func eventsByTags(events: [EventEntity]) -> [TagEntity : [EventEntity]] {
-        var dict: [TagEntity : [EventEntity]] = [:]
-        
-        for event in events {
-            if let tag = event.tag {
-                if dict[tag].isNotNil() {
-                    dict[tag]!.append(event)
-                } else {
-                    dict[tag] = [event]
-                }
-            }
-        }
-        
-        let dictSorted = dict.sorted { $0.key.name < $1.key.name }
-        var newSortedDict: [TagEntity: [EventEntity]] = [:]
-        
-        for (tag, events) in dictSorted {
-            newSortedDict[tag] = events.sorted(by: { $0.daysRemaining < $1.daysRemaining })
-        }
-                
-        return newSortedDict
-    }
     
 }
 
 extension EventRepository {
     
     @MainActor
-    func fetchEvents() async {
+    static func fetchEvents() async throws -> [EventEntity] {
+        let viewContext = CoreDataStack.shared.viewContext
         let request = EventEntity.fetchRequest()
-        do {
-            self.events = []
-            let events = try viewContext.fetch(request)
-            self.events = events
-                .sorted(by: { $0.daysRemaining < $1.daysRemaining })
-        } catch {
-            print("⚠️ \(error.localizedDescription)")
-        }
+        
+        let events = try viewContext.fetch(request)
+        return events
+            .sorted(by: { $0.daysRemaining < $1.daysRemaining })
     }
     
-    func createEvent(name: String, date: Date, repeatType: Repeat, tag: TagEntity?) {
+    static func createEvent(creationModel: EventCreationModel) async throws -> EventEntity {
+        let viewContext = CoreDataStack.shared.viewContext
+        
         let newEvent = EventEntity(context: viewContext)
         newEvent.id = UUID()
-        newEvent.name = name
-        newEvent.date = date
-        newEvent.repeatType = repeatType
-        newEvent.tag = tag
+        newEvent.name = creationModel.name
+        newEvent.date = creationModel.date
+        newEvent.repeatType = creationModel.repeatType
+        newEvent.tag = creationModel.tag
         
-        CoreDataStack.shared.saveContext()
+        try CoreDataStack.shared.saveContext()
         
-        events.append(newEvent)
-        Task {
-            await NotificationManager.shared.createNotifications(event: newEvent)
-        }
+        await NotificationManager.shared.createNotifications(event: newEvent)
+        WidgetCenter.shared.reloadAllTimelines()
         
-        self.events = events
-            .sorted(by: { $0.daysRemaining < $1.daysRemaining })
+        return newEvent
+    }
+    
+    static func updateEvent(updateModel: EventUpdateModel) throws {
+        let event = updateModel.event
+        
+        event.name = updateModel.name
+        event.date = updateModel.date
+        event.repeatType = updateModel.repeatType
+        event.tag = updateModel.tag
+        
+        try CoreDataStack.shared.saveContext()
         
         WidgetCenter.shared.reloadAllTimelines()
     }
     
-    func updateEvent(event: EventEntity, name: String, date: Date, repeatType: Repeat, tag: TagEntity?) {
-        event.name = name
-        event.date = date
-        event.repeatType = repeatType
-        event.tag = tag
+    static func deleteEvent(_ event: EventEntity) throws {
+        let viewContext = CoreDataStack.shared.viewContext
         
-        CoreDataStack.shared.saveContext()
-        
-        self.events = events
-            .sorted(by: { $0.daysRemaining < $1.daysRemaining })
-        
-        WidgetCenter.shared.reloadAllTimelines()
-    }
-    
-    func deleteEvent(_ event: EventEntity) async {
         viewContext.delete(event)
-        await fetchEvents()
-        CoreDataStack.shared.saveContext()
+        try CoreDataStack.shared.saveContext()
         WidgetCenter.shared.reloadAllTimelines()
     }
     
@@ -118,10 +73,11 @@ extension EventRepository {
 extension EventRepository {
     
     func fetchEventsForWidget() -> [EventEntity] {
+        let viewContext = CoreDataStack.shared.viewContext
         let request = EventEntity.fetchRequest()
+        
         do {
-            self.events = []
-            let events = try self.viewContext.fetch(request)
+            let events = try viewContext.fetch(request)
             EventManager.shared.updatePastEventsToNextValidDateForWidget(events: events)
             return events
                 .sorted(by: { $0.daysRemaining < $1.daysRemaining })
@@ -129,12 +85,14 @@ extension EventRepository {
     }
     
     func fetchEventWithCustomRequestForDisplayInWidget(eventID: String) -> EventEntity? {
+        let viewContext = CoreDataStack.shared.viewContext
         let request = EventEntity.fetchRequest()
         request.predicate = NSPredicate(format: "id == %@", UUID(uuidString: eventID)! as CVarArg)
         
         do {
-            let results = try self.viewContext.fetch(request)
+            let results = try viewContext.fetch(request)
             EventManager.shared.updatePastEventsToNextValidDateForWidget(events: results)
+            
             return results.first
         } catch let error as NSError{
             print("Could not fetch.\(error.userInfo)")
@@ -143,11 +101,13 @@ extension EventRepository {
     }
     
     func fetchTheNextEventForDisplayInWidget() -> EventEntity? {
+        let viewContext = CoreDataStack.shared.viewContext
         let request = EventEntity.fetchRequest()
         
         do {
-            let results = try self.viewContext.fetch(request)
+            let results = try viewContext.fetch(request)
             EventManager.shared.updatePastEventsToNextValidDateForWidget(events: results)
+            
             return results
                 .sorted(by: { $0.daysRemaining < $1.daysRemaining })
                 .first

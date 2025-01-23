@@ -15,8 +15,8 @@ final class EventManager: ObservableObject {
 
 extension EventManager {
     
-    func updatePastEventsToNextValidDate() {
-        let events = EventRepository.shared.events
+    func updatePastEventsToNextValidDate() async {
+        let events = EventStore.shared.events
         
         for event in events {
             if event.date < .now {
@@ -25,23 +25,21 @@ extension EventManager {
                     continue
                 case .monthly:
                     event.date = event.date.advancedByOneMonth()
-                    Task {
-                        await NotificationManager.shared.createNotifications(event: event)
-                    }
-                    CoreDataStack.shared.saveContext()
+                    await NotificationManager.shared.createNotifications(event: event)
                 case .yearly:
                     event.date = event.date.advancedByOneYear()
-                    Task {
-                        await NotificationManager.shared.createNotifications(event: event)
-                    }
-                    CoreDataStack.shared.saveContext()
+                    await NotificationManager.shared.createNotifications(event: event)
                 }
             }
         }
         
-        Task {
-            await EventRepository.shared.fetchEvents()
+        do {
+            try CoreDataStack.shared.saveContext()
+        } catch {
+            // TODO: Manage errors
         }
+        
+        await EventStore.shared.fetchEvents()
     }
     
     func updatePastEventsToNextValidDateForWidget(events: [EventEntity]) {
@@ -55,15 +53,19 @@ extension EventManager {
                     Task {
                         await NotificationManager.shared.createNotifications(event: event)
                     }
-                    CoreDataStack.shared.saveContext()
                 case .yearly:
                     event.date = event.date.advancedByOneYear()
                     Task {
                         await NotificationManager.shared.createNotifications(event: event)
                     }
-                    CoreDataStack.shared.saveContext()
                 }
             }
+        }
+        
+        do {
+            try CoreDataStack.shared.saveContext()
+        } catch {
+            // TODO: Manage errors
         }
         
         WidgetCenter.shared.reloadAllTimelines()

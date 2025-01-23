@@ -32,25 +32,29 @@ final class CreateNewEventViewModel: ObservableObject {
 // MARK: - Creation
 extension CreateNewEventViewModel {
     
-    func createNewEvent() {
+    func createNewEvent() async {
         if canEventBeCreated() {
-            EventRepository.shared.createEvent(
-                name: name,
-                date: allDay ? date.dateAtMidnight() : date,
-                repeatType: repeatType,
-                tag: tag
+            await EventStore.shared.createEvent(
+                creationModel: .init(
+                    name: name,
+                    date: allDay ? date.dateAtMidnight() : date,
+                    repeatType: repeatType,
+                    tag: tag
+                )
             )
         } else { return }
     }
     
     func updateEvent(_ event: EventEntity) {
         if canEventBeCreated() {
-            EventRepository.shared.updateEvent(
-                event: event,
-                name: name,
-                date: allDay ? date.dateAtMidnight() : date,
-                repeatType: repeatType,
-                tag: tag
+            EventStore.shared.updateEvent(
+                updateModel: .init(
+                    event: event,
+                    name: name,
+                    date: allDay ? date.dateAtMidnight() : date,
+                    repeatType: repeatType,
+                    tag: tag
+                )
             )
         } else { return }
     }

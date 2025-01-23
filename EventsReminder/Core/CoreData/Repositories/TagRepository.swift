@@ -37,7 +37,8 @@ extension TagRepository {
         newTag.name = name
         newTag.color = color
         
-        CoreDataStack.shared.saveContext()
+//        CoreDataStack.shared.saveContext()
+        // TODO: Reactive
         
         tags.append(newTag)
         self.tags = tags
@@ -47,7 +48,8 @@ extension TagRepository {
     func deleteTag(_ tag: TagEntity) {
         viewContext.delete(tag)
         fetchTags()
-        CoreDataStack.shared.saveContext()
+//        CoreDataStack.shared.saveContext()
+        // TODO: Reactive
         WidgetCenter.shared.reloadAllTimelines()
     }
     

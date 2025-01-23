@@ -15,8 +15,8 @@ struct EventsReminderApp: App {
     private let coreDataStack = CoreDataStack.shared
     private let router = NavigationManager(isPresented: .constant(.home))
     
-    // Repository
-    private let eventRepository: EventRepository = .shared
+    // Stores
+    @StateObject private var eventStore: EventStore = .shared
     private let tagRepository = TagRepository.shared
     
     @StateObject private var filterManager: FilterManager = .shared
@@ -28,12 +28,12 @@ struct EventsReminderApp: App {
                 HomeView(router: router)
             }
             .environment(\.managedObjectContext, coreDataStack.viewContext)
-            .environmentObject(eventRepository)
+            .environmentObject(eventStore)
             .environmentObject(tagRepository)
             .environmentObject(filterManager)
             .task {
-                await eventRepository.fetchEvents()
-                EventManager.shared.updatePastEventsToNextValidDate()
+                await eventStore.fetchEvents()
+                await EventManager.shared.updatePastEventsToNextValidDate()
             }
             .onAppear {
                 tagRepository.fetchTags()
